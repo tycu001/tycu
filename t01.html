@@ -14,102 +14,36 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>市中學習中心</title>
     <style>
-        .swiper-container {
-            width: 600px;
-            height: 600px;
-        }
-        .jumbotron {
-            background-image: url("https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
-        }
-        .card {
-            box-shadow: 2px 5px 5px;
-        }
     </style>
 </head>
 <body>
     <div class="jumbotron">
         <h1>市中學習中心導覽</h1>
     </div>
-    <!-- Slider main container -->
-<div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="images/DSCN5549.JPG" class="card-img-top" style="height: 300px;;" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">光影文化館</h4>
-                    <a href="t011.html" class="card-link">研習室1</a>
-                    <a href="#" class="card-link">研習室2</a>
-                    <a href="#" class="card-link">研習室3</a>
-                    <a href="#" class="card-link">排練室</a>
-                    <a href="#" class="card-link">電腦室</a>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-primary">導航</button>
-                    <button class="btn btn-primary">停車場</button>
-                    <button class="btn btn-primary">無障礙設施</button>
-                </div>
-            </div>
+    <div class="card">
+        <img src="images/DSCN5549.JPG" class="card-img-top" style="height: 300px;;" alt="">
+        <div class="card-body">
+            <h4 class="card-title">光影文化館</h4>
+            <a href="t011.html" class="card-link">研習室1</a>
+            <a href="#" class="card-link">研習室2</a>
+            <a href="#" class="card-link">研習室3</a>
+            <br>
+            <a href="#" class="card-link">排練室</a>
+            <a href="#" class="card-link">電腦室</a>
         </div>
-        <div class="swiper-slide">
-            <div class="card bg-info">
-                <div class="card-header">市中學習中心</div>
-                <div class="card-body">
-                    <h4 class="card-title">埔子區</h4>
-                </div>
-                <div class="card-footer">
-                    報名地點-
-                </div>
-            </div>
-   
-        </div>
-        <div class="swiper-slide">
-            <div class="card">
-                <div class="card-header">市中學習中心</div>
-                <div class="card-body">
-                    <h4 class="card-title">市中區</h4>
-                    <a href="" class="card-link">上課點....</a>
-                </div>
-                <div class="card-footer">
-                    報名地點-
-                </div>
-
+        <div class="card-footer">
         </div>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
 
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="btn-group fixed-bottom">
+        <a href="tel:03-3357745" class="btn btn-primary">打電話</a>
+        <a href="https://goo.gl/maps/YU6dEVRfDiFL2VGy8" class="btn btn-primary">導航</a>
+        <a href="" class="btn btn-primary">停車場</a>
+        <a href="" class="btn btn-primary">無障礙設施</a>
 
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-</div>
-    <script>
-        var mySwiper = new Swiper('.swiper-container', {
-            // Optional parameters
-            loop: true,
-            
 
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
 
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+    </div>
 
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-        })
-    </script>
 </body>
 </html>
