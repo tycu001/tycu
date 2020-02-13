@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <style>
+    </style>
+    <title>教育部推廣課程</title>
+</head>
+<body>
+    <div class="jumbotron bg-info text-white" >
+        <h1>2020 課程開設重點內容</h1>
+        <h4>發展特色課程-環境綠活/藝術文史</h4>
+        <h4>配合教育部開設課程計畫(12年國民基本教育之新興議題)</h4>
+    </div>
+
+    <div id="accordion" style="margin-bottom: 50px;">
+
+        <div class="card" v-for="course in courses">
+          <div class="card-header" >
+            <a class="card-link" data-toggle="collapse" :href="course.link">
+              {{course.name}}
+            </a>
+          </div>
+          <div :id="course.id" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+                {{course.content}}
+            </div>
+          </div>
+    </div>
+
+    <div class="btn-group fixed-bottom">
+        <a href="tel:0952657890" class="btn btn-primary">打電話</a>
+        <a href="mailto:chang0819@gmail.com" class="btn btn-primary">課務信箱</a>
+        <a href="https://line.me/ti/p/Ff-SiZ8cx-" class="btn btn-primary">Line 加為好友</a>
+    </div>
+ 
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>  <script src="count.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#accordion',
+            data: {
+                courses: [
+            {"name":"特色-環境綠活","content": "環境教育/社區綠生活","id": "c23","link":"#c23"},
+            {"name":"特色-藝術文史","content": "社區藝文/社區培力","id": "c24","link":"#c24"},
+            {"name":"性別平等","content": "aa","id": "c1","link":"#c1"},
+            {"name":"人權","content": "","id": "c2","link":"#c2"},
+            {"name":"環境","content": "南崁溪","id": "c3","link":"#c3"},
+            {"name":"海洋","content": "","id": "c4","link":"#c4"},
+            {"name":"品德","content": "","id": "c5","link":"#c5"},
+            {"name":"生命","content": "","id": "c6","link":"#c6"},
+            {"name":"法治","content": "","id": "c7","link":"#c7"},
+            {"name":"科技","content": "AI","id": "c8","link":"#c8"},
+            {"name":"資訊","content": "創客運動","id": "c9","link":"#c9"},
+            {"name":"能源","content": "","id": "c10","link":"#c10"},
+            {"name":"安全","content": "","id": "c11","link":"#c11"},
+            {"name":"防災","content": "","id": "c12","link":"#c12"},
+            {"name":"家庭教育","content": "","id": "c13","link":"#c13"},
+            {"name":"生涯規畫","content": "","id": "c14","link":"#c14"},
+            {"name":"多元文化","content": "","id": "c15","link":"#c15"},
+            {"name":"閱讀素養","content": "","id": "c16","link":"#c16"},
+            {"name":"戶外教育","content": "","id": "c17","link":"#c17"},
+            {"name":"國際教育","content": "","id": "c18","link":"#c18"},
+            {"name":"原住民教育育","content": "","id": "c19","link":"#c19"},
+            {"name":"人文社會素養","content": "","id": "c20","link":"#c20"},
+            {"name":"地方學","content": "","id": "c21","link":"#c21"},
+            {"name":"山林政策","content": "","id": "c22","link":"#c22"},
+
+        ] 
+            }
+            })
+    </script>
+</body>
+</html>
