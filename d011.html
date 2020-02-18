@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>市中學習中心</title>
+    <style>
+        .card {
+            box-shadow: 2px 5px 5px;
+        }
+        .jumbotron {
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>多功能教室1</h1>
+    </div>
+    <div class="card">
+        <img src="images/d01classroom01.png" alt="" class="card-img-top">
+    </div>
+    <div id="app" class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>星期一</th>
+                    <th>星期二</th>
+                    <th>星期三</th>
+                    <th>星期四</th>
+                    <th>星期五</th>
+                    <th>星期六</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="w1" >
+                        <div v-for="course in courses"  v-if="course.week=='w1'  & course.t=='早'  ">
+                            {{course.name}} <br>
+                            {{course.teacher}} <br>
+                            {{course.time}}
+                        </div>
+                    </td>
+                    <td id="w2">
+                        <div v-for="course in courses"  v-if="course.week=='w2'">
+                            {{course.name}} <br>
+                            {{course.teacher}} <br>
+                            {{course.time}}
+                        </div>
+                    </td>
+                    <td id="w3">
+                        <div v-for="course in courses"  v-if="course.week=='w3'">
+                            {{course.name}} <br>
+                            {{course.teacher}} <br>
+                            {{course.time}}
+                        </div>
+                    </td>
+                    <td id="w4">
+                        <div v-for="course in courses"  v-if="course.week=='w4'">
+                            {{course.name}} <br>
+                            {{course.teacher}} <br>
+                            {{course.time}}
+                        </div>
+                    </td>
+                    <td id="w5">
+                        <div v-for="course in courses"  v-if="course.week=='w5'">
+                            {{course.name}} <br>
+                            {{course.teacher}} <br>
+                            {{course.time}}
+                        </div>
+                    </td>
+                    <td id="w6">
+                        <div v-for="course in courses"  v-if="course.week=='w6'">
+                            {{course.name}} <br>
+                            {{course.teacher}} <br>
+                            {{course.time}}
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>  
+    <!-- production version, optimized for size and speed -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        let data = {
+            courses: [
+                {name:"投資理財策略", teacher:"岑家偉老師" ,time:"15:30~17:30",week: "w1", t: "早" },
+                {name:"經絡及藥膳養生保健學", teacher:"杜世文老師" ,time:"18:30~20:30" ,week: 'w2'},
+                {name:"舊城區攝影與人文", teacher:"廖浩培老師" ,time:"18:30~20:30",week: "w1",t: "早" },
+                {name:"國台語新歌教唱", teacher:"林榮進老師" ,time:"13:30~15:30",week: 'w3' },
+                {name:"指繪粉彩初級", teacher:"楊和珍老師" ,time:"14:00~16:00",week: "w1", t: "午"},
+                {name:"國台語新歌教唱", teacher:"林榮進老師" ,time:"13:30~15:30",week: 'w5' },
+            ]
+        }
+        let vm = new Vue({
+            el: '#app',
+            data: data
+        })
+    </script>
+</body>
+</html>
