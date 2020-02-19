@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
+    <title>桃園市桃園社區大學</title>
+    <style>
+        #map { height: 800px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map', {
+            center: [24.9887,121.2944],
+            zoom: 15
+        });
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+
+        L.marker([24.99923,121.30744]).addTo(map).bindTooltip("桃園光影文化館").openTooltip();
+        L.marker([24.98868,121.30493]).addTo(map).bindTooltip("南門國小").openTooltip();
+        L.marker([24.97635,121.31362]).addTo(map).bindTooltip("福豐國中").openTooltip();
+        L.marker([24.98282,121.31574]).addTo(map).bindTooltip("建國國小").openTooltip();
+        L.marker([25.025896,121.2989434]).addTo(map).bindTooltip("湧福協會").openTooltip();
+        L.marker([24.9870394,121.3133053]).addTo(map).bindTooltip("雲林里集會所").openTooltip();
+        L.marker([24.9820574,121.3060576,17]).addTo(map).bindTooltip("陽明公園管理中心").openTooltip();
+        L.marker([25.0169546,121.2903442]).addTo(map).bindTooltip("寶安教室").openTooltip();
+        L.marker([25.0086645,121.3030331]).addTo(map).bindTooltip("璟都CASA").openTooltip();
+        L.marker([25.0057872,121.3049025]).addTo(map).bindTooltip("東埔活動中心").openTooltip();
+        L.marker([25.0062758,121.3052682]).addTo(map).bindTooltip("古箏教室").openTooltip();
+        L.marker([25.0086645,121.3030331]).addTo(map).bindTooltip("璟都CASA").openTooltip();
+        L.marker([25.0213039,121.2904115]).addTo(map).bindTooltip("莊敬國小").openTooltip();
+        L.marker([25.0162223,121.2905086]).addTo(map).bindTooltip("璟養生瑜伽").openTooltip();
+        L.marker([25.0160605,121.2916062]).addTo(map).bindTooltip("蘇菲烘焙").openTooltip();
+        L.marker([25.0031201,121.3024627]).addTo(map).bindTooltip("咖啡先生").openTooltip();
+        L.marker([24.9842009,121.2863303]).addTo(map).bindTooltip("中泰里辦公處").openTooltip();
+        L.marker([24.986863,121.2908992]).addTo(map).bindTooltip("五中活動中心").openTooltip();
+        L.marker([24.9881379,121.2858022]).addTo(map).bindTooltip("紐約廣場").openTooltip();
+        L.marker([25.0035939,121.2831574]).addTo(map).bindTooltip("亞洲高爾夫球場").openTooltip();
+        L.marker([24.99498,121.30442]).addTo(map).bindTooltip("西門國小").openTooltip();
+        L.marker([24.9917243,121.3093103]).addTo(map).bindTooltip("77藝文町").openTooltip();
+        L.marker([24.9974657,121.3160227]).addTo(map).bindTooltip("林肯文教中心").openTooltip();
+        L.marker([24.9935158,121.2926743]).addTo(map).bindTooltip("中正學習中心").openTooltip();
+        L.marker([24.9813412,121.2693987]).addTo(map).bindTooltip("龍山國小").openTooltip();
+        L.marker([24.9908798,121.3042183]).addTo(map).bindTooltip("南門活動中心").openTooltip();
+        L.marker([24.9955792,121.3028904]).addTo(map).bindTooltip("桃園國中").openTooltip();
+        L.marker([24.9886932,121.2951693]).addTo(map).bindTooltip("焙趣坊").openTooltip();
+        L.marker([24.990898,121.3134449]).addTo(map).bindTooltip("俠客樂器").openTooltip();
+        L.marker([25.0140088,121.2919164]).addTo(map).bindTooltip("豪情世家").openTooltip();
+        L.marker([24.997934,121.3107446]).addTo(map).bindTooltip("朝陽活動中心").openTooltip();
+        L.marker([25.0010303,121.3011329]).addTo(map).bindTooltip("永康市民活動中心").openTooltip();
+        L.marker([25.006271,121.3052682]).addTo(map).bindTooltip("祥鶴文化事業").openTooltip();
+
+        
+
+    </script>
+</body>
+</html>
