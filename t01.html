@@ -21,7 +21,7 @@
         <h4>市中區導覽</h4>
     </div>
     <div class="card">
-        <img src="images/DSCN5549.JPG" class="card-img-top img-fluid"  alt="">
+        <img src="images/DSCN5549.JPG" class="card-img-top"  alt="">
         <div class="card-body">
             <h6 class="card-title">桃園光影文化館(4F)</h6>
             <a href="t014.html" class="card-link">排練室</a>
@@ -31,14 +31,59 @@
             <a href="t013.html" class="card-link">研習室3</a>
             <a href="t015.html" class="card-link">電腦室</a>
         </div>
-        <div class="card-footer">
-            <h6>無障礙空間</h6>
-            <a href="" class="card-link">機車停車場</a>       
-            <a href="" class="card-link">電梯</a>
+        <div class="card-footer text-center">
+            <h6>友善空間</h6>
         </div>
     </div>
 
-    <div class="btn-group fixed-bottom">
+    <div id="accordion">
+
+        <div class="card">
+          <div class="card-header bg-primary">
+            <a class="card-link  text-white" data-toggle="collapse" href="#collapseOne">
+                機車停車場
+            </a>
+          </div>
+          <div id="collapseOne" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+                <img src="images/DSCN5551.JPG" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+                汽車停車場
+            </a>
+          </div>
+          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Lorem ipsum..
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                電梯
+            </a>
+          </div>
+          <div id="collapseThree" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Lorem ipsum..
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+    <div class="card">
+        
+    </div>
+
+    <div class="btn-group fixed-bottom mt-5">
         <a href="tel:03-3318897" class="btn btn-primary">打電話</a>
         <a href="https://goo.gl/maps/YU6dEVRfDiFL2VGy8" class="btn btn-primary">導航</a>
     </div>
