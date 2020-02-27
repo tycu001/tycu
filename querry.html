@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>市中區-桃園光影文化館</title>
+    <style>
+      body {
+        background-color: rgb(3, 40, 83);
+      }
+      .card {
+        box-shadow: 2px 5px 5px;
+      }
+      .courseitem {
+        width: 60%;
+        background-color: rgb(255, 255, 255);
+        color: rgb(3, 40, 83);
+        font-size: 24px;
+      }
+      .mycourse {
+        font-size: 24px;
+        margin: 30px 0px;
+      }
+      .input {
+        background-color: rgb(4, 59, 122);
+        margin: 10px;
+        padding: 5px;
+      }
+      .coursetitle {
+        background-color: rgb(3, 40, 83);
+        color: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="mycourse">
+      <div class="input container">
+        <select name="" id="" v-model="input.place" class="font-control">
+          <option value="全部">全部</option>
+          <option value="第一研習">第一研習</option>
+          <option value="第二研習">第二研習</option>
+          <option value="第三研習">第三研習</option>
+          <option value="電腦教室">電腦教室</option>
+          <option value="四樓舞蹈教室">四樓舞蹈教室</option>
+        </select>
+        <input
+          type="text"
+          style="width: 100%;"
+          v-model.trim="input.coursename"
+          placeholder="請輸入課程名稱"
+          class="font-control mx-auto"
+        />
+      </div>
+      <div class="courseitem mx-auto" v-for="(course,index) in titleCourse">
+        <div class="coursetitle">
+          <span>
+            {{index+1}}
+          </span>
+          <span> {{course.課程編號}} </span> <span> {{course.課程名稱}} </span>
+        </div>
+        <span> {{course.上課星期}} </span>
+        <span> {{course.上課時段}} </span>
+        <span> {{course.上課開始時間}} </span>
+        <span> {{course.教師姓名}} </span> <br />
+        <span> {{course.教室}} </span>
+      </div>
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="querry.js"></script>
+  </body>
+</html>

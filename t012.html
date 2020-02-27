@@ -1,334 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <title>市中區-桃園光影文化館</title>
     <style>
-        .card {
-            box-shadow: 2px 5px 5px;
-        }
+      .card {
+        box-shadow: 2px 5px 5px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="jumbotron">
-        <h1>研習室2(2F)</h1>
-        <p class="float-right text-danger">資料更新時間：2020/02/19</p>
+      <h5>研習室2(2F)</h5>
+      <p class="float-right text-danger">資料更新時間：2020/02/27</p>
     </div>
     <div id="app" class="table-responsive">
-        <table class="table table-striped table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th>星期一</th>
-                    <th>星期二</th>
-                    <th>星期三</th>
-                    <th>星期四</th>
-                    <th>星期五</th>
-                    <th>星期六</th>
-                    <th>星期日</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="morning" >
-                    <td id="w1" >
-                        <div v-for="course in courses"  v-if="course.上課星期=='星期一'  & course.上課時段=='早上'  ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師 <br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-                        </div>
-                    </td>
-                    <td id="w2">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期二'  & course.上課時段=='早上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師 <br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-                            
+      <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期三</th>
+            <th>星期四</th>
+            <th>星期五</th>
+            <th>星期六</th>
+            <th>星期日</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="morning">
+            <td id="w1">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期一'  & course.上課時段=='早上'  "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師 <br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w2">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期二'  & course.上課時段=='早上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師 <br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w3">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期三'  & course.上課時段=='早上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師 <br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w4">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期四'  & course.上課時段=='早上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w5">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期五'  & course.上課時段=='早上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w6">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期六'  & course.上課時段=='早上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w7">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期日'  & course.上課時段=='早上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+          </tr>
 
-                        </div>
-                    </td>
-                    <td id="w3">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期三'  & course.上課時段=='早上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師 <br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
+          <tr class="afternoon">
+            <td id="w1">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期一'  & course.上課時段=='下午'  "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w2">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期二'  & course.上課時段=='下午' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w3">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期三'  & course.上課時段=='下午' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w4">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期四'  & course.上課時段=='下午' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w5">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期五'  & course.上課時段=='下午' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w6">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期六'  & course.上課時段=='下午' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w7">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期日'  & course.上課時段=='下午' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+          </tr>
 
-                        </div>
-                    </td>
-                    <td id="w4">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期四'  & course.上課時段=='早上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w5">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期五'  & course.上課時段=='早上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w6">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期六'  & course.上課時段=='早上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w7">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期日'  & course.上課時段=='早上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                </tr>
-
-                <tr class="afternoon">
-                    <td id="w1" >
-                        <div v-for="course in courses"  v-if="course.上課星期=='星期一'  & course.上課時段=='下午'  ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w2">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期二'  & course.上課時段=='下午' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w3">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期三'  & course.上課時段=='下午' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w4">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期四'  & course.上課時段=='下午' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w5">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期五'  & course.上課時段=='下午' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w6">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期六'  & course.上課時段=='下午' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w7">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期日'  & course.上課時段=='下午' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                </tr>
-
-                <tr class="night">
-                    <td id="w1" >
-                        <div v-for="course in courses"  v-if="course.上課星期=='星期一'  & course.上課時段=='晚上'  ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w2">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期二'  & course.上課時段=='晚上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w3">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期三'  & course.上課時段=='晚上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w4">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期四'  & course.上課時段=='晚上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w5">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期五'  & course.上課時段=='晚上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w6">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期六'  & course.上課時段=='晚上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                    <td id="w7">
-                        <div v-for="course in courses" v-if="course.上課星期=='星期日'  & course.上課時段=='晚上' ">
-                            {{course.課程編號}} <br>
-                            {{course.課程名稱}} <br>
-                            {{course.教師姓名}} 老師<br>
-                            上課人數 {{course.繳費人數}}人 <br>
-                            {{course.上課時段 + course.上課開始時間}} <br>
-
-                        </div>
-                    </td>
-                </tr>
-
-
-            </tbody>
-        </table>
-
-    </div>  
+          <tr class="night">
+            <td id="w1">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期一'  & course.上課時段=='晚上'  "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w2">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期二'  & course.上課時段=='晚上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w3">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期三'  & course.上課時段=='晚上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w4">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期四'  & course.上課時段=='晚上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w5">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期五'  & course.上課時段=='晚上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w6">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期六'  & course.上課時段=='晚上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+            <td id="w7">
+              <div
+                v-for="course in courses"
+                v-if="course.上課星期=='星期日'  & course.上課時段=='晚上' "
+              >
+                {{course.課程編號}} <br />
+                {{course.課程名稱}} <br />
+                {{course.教師姓名}} 老師<br />
+                {{course.上課時段 + course.上課開始時間}} <br />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <!-- production version, optimized for size and speed -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
     <script>
-        let data = {
-            courses: [
-        {
-            "項次": "26",
-            "課程編號": "1091C6003",
-            "課程名稱": "革物手作。就是愛玩皮 精品班",
-            "學習中心": "市中區",
-            "地點": "桃園光影文化館",
-            "教室": "第二研習",
-            "上課星期": "星期六",
-            "上課時段": "下午",
-            "上課開始時間": "13:00",
-            "上課結束時間": "15:00",
-            "繳費人數": "21",
-            "教師姓名": "范萬權"
-        },
-        {
-            "項次": "27",
-            "課程編號": "1091C6018",
-            "課程名稱": "手繪生活城市速寫",
-            "學習中心": "市中區",
-            "地點": "桃園光影文化館",
-            "教室": "第二研習",
-            "上課星期": "星期一",
-            "上課時段": "下午",
-            "上課開始時間": "14:00",
-            "上課結束時間": "16:00",
-            "繳費人數": "24",
-            "教師姓名": "徐江妹(酷妹)"
-        },
-        {
-            "項次": "28",
-            "課程編號": "1091C5027",
-            "課程名稱": "烏克麗麗初級1",
-            "學習中心": "市中區",
-            "地點": "桃園光影文化館",
-            "教室": "第二研習",
-            "上課星期": "星期四",
-            "上課時段": "下午",
-            "上課開始時間": "15:30",
-            "上課結束時間": "17:30",
-            "繳費人數": "15",
-            "教師姓名": "江欣璇"
-        },
-        {
-            "項次": "29",
-            "課程編號": "1091C6045",
-            "課程名稱": "成人書法與賞析",
-            "學習中心": "市中區",
-            "地點": "桃園光影文化館",
-            "教室": "第二研習",
-            "上課星期": "星期六",
-            "上課時段": "晚上",
-            "上課開始時間": "18:30",
-            "上課結束時間": "20:30",
-            "繳費人數": "19",
-            "教師姓名": "吳吉祥"
-        }
-    ]
-        }
-        let vm = new Vue({
-            el: '#app',
-            data: data
-        })
+      let data = {
+        courses: [
+          {
+            項次: "25",
+            課程編號: "1091C6003",
+            課程名稱: "革物手作。就是愛玩皮 精品班",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期六",
+            上課時段: "下午",
+            上課開始時間: "13:00",
+            上課結束時間: "15:00",
+            繳費人數: "15",
+            教師姓名: "范萬權"
+          },
+          {
+            項次: "26",
+            課程編號: "1091C6007",
+            課程名稱: "革物手作。就是愛玩皮 實作班",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期六",
+            上課時段: "下午",
+            上課開始時間: "15:30",
+            上課結束時間: "17:30",
+            繳費人數: "16",
+            教師姓名: "范萬權"
+          },
+          {
+            項次: "27",
+            課程編號: "1091C5003",
+            課程名稱: "烏克麗麗中級 3",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期五",
+            上課時段: "下午",
+            上課開始時間: "13:30",
+            上課結束時間: "15:30",
+            繳費人數: "12",
+            教師姓名: "江欣璇"
+          },
+          {
+            項次: "28",
+            課程編號: "1091C1015",
+            課程名稱: "Easy生活美語初級2",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期一",
+            上課時段: "下午",
+            上課開始時間: "13:00",
+            上課結束時間: "15:00",
+            繳費人數: "22",
+            教師姓名: "黃貞惠"
+          },
+          {
+            項次: "29",
+            課程編號: "1091C1019",
+            課程名稱: "旅遊英語通初級3",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期二",
+            上課時段: "下午",
+            上課開始時間: "13:30",
+            上課結束時間: "15:30",
+            繳費人數: "22",
+            教師姓名: "黃貞惠"
+          },
+          {
+            項次: "30",
+            課程編號: "1091C1016",
+            課程名稱: "生活美語初級2",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期一",
+            上課時段: "下午",
+            上課開始時間: "15:00",
+            上課結束時間: "17:00",
+            繳費人數: "14",
+            教師姓名: "黃貞惠"
+          },
+          {
+            項次: "31",
+            課程編號: "1091C1017",
+            課程名稱: "實用生活美語初級5",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期三",
+            上課時段: "下午",
+            上課開始時間: "13:30",
+            上課結束時間: "15:30",
+            繳費人數: "11",
+            教師姓名: "黃貞惠"
+          },
+          {
+            項次: "32",
+            課程編號: "1091C5021",
+            課程名稱: "烏克麗麗初級4",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期四",
+            上課時段: "下午",
+            上課開始時間: "13:30",
+            上課結束時間: "15:30",
+            繳費人數: "11",
+            教師姓名: "江欣璇"
+          },
+          {
+            項次: "33",
+            課程編號: "1091C5027",
+            課程名稱: "烏克麗麗初級1",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期四",
+            上課時段: "下午",
+            上課開始時間: "15:30",
+            上課結束時間: "17:30",
+            繳費人數: "15",
+            教師姓名: "江欣璇"
+          },
+          {
+            項次: "34",
+            課程編號: "1091C3002",
+            課程名稱: "茶道入門",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期二",
+            上課時段: "早上",
+            上課開始時間: "09:30",
+            上課結束時間: "11:30",
+            繳費人數: "15",
+            教師姓名: "林麗華"
+          },
+          {
+            項次: "35",
+            課程編號: "1091C3015",
+            課程名稱: "中國結與種子相遇B",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期五",
+            上課時段: "早上",
+            上課開始時間: "09:30",
+            上課結束時間: "11:30",
+            繳費人數: "13",
+            教師姓名: "張明麗"
+          },
+          {
+            項次: "36",
+            課程編號: "1091C6045",
+            課程名稱: "成人書法與賞析",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期六",
+            上課時段: "晚上",
+            上課開始時間: "18:30",
+            上課結束時間: "20:30",
+            繳費人數: "22",
+            教師姓名: "吳吉祥"
+          },
+          {
+            項次: "37",
+            課程編號: "1091C3007",
+            課程名稱: "幸福手工皂與保養品手作中級3",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期二",
+            上課時段: "晚上",
+            上課開始時間: "18:30",
+            上課結束時間: "20:30",
+            繳費人數: "8",
+            教師姓名: "周玉珊"
+          },
+          {
+            項次: "38",
+            課程編號: "1091C6016",
+            課程名稱: "休閒油畫 ",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期三",
+            上課時段: "晚上",
+            上課開始時間: "18:30",
+            上課結束時間: "20:30",
+            繳費人數: "15",
+            教師姓名: "林麗琴"
+          },
+          {
+            項次: "39",
+            課程編號: "1091C3011",
+            課程名稱: "易經智慧讓生活更有趣",
+            學習中心: "市中區光影",
+            地點: "桃園光影文化館",
+            教室: "第二研習",
+            上課星期: "星期四",
+            上課時段: "晚上",
+            上課開始時間: "18:30",
+            上課結束時間: "20:30",
+            繳費人數: "11",
+            教師姓名: "徐素珍"
+          }
+        ]
+      };
+      let vm = new Vue({
+        el: "#app",
+        data: data
+      });
     </script>
-</body>
+  </body>
 </html>
