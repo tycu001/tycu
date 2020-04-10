@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <style>
+      body {
+        background-image: url(http://www.phasersintegrated.com/wp-content/uploads/2019/12/efb18da597aa627e21dce33561bc9c40-colorful-music-background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body class="bg-info">
+    <div id="app">
+      <div
+        class="d-flex p-2 justify-content-center align-items-center"
+        style="height: 400px;"
+      >
+        <div class="p-2">
+          <h3
+            class="animated flip delay-5s"
+            style="
+              color: white;
+              background-color: black;
+              opacity: 0.8;
+              padding: 5px;
+            "
+          >
+            2020 / 04 / 10 放漾桃花源音樂一起 HIGH !!
+          </h3>
+          <table
+            class="table table-striped"
+            style="opacity: 0.9; color: blanchedalmond;"
+          >
+            <thead class="thead-dark">
+              <tr>
+                <th>時間</th>
+                <th>演出者</th>
+                <th>表演班級</th>
+                <th>曲目</th>
+                <th>彈奏者</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="animated fadeIn delay-2s">
+                <td>9:00-10:00</td>
+                <td>蓉蓉</td>
+                <td>桃花源公益合唱團</td>
+                <td>小雨</td>
+                <td>陳惠絹</td>
+              </tr>
+              <tr class="animated fadeIn delay-5s">
+                <td>10:00-11:00</td>
+                <td>蓉蓉</td>
+                <td>桃花源公益合唱團</td>
+                <td>愛江山更愛美人</td>
+                <td>陳惠絹</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      let data = {
+        songs: {
+          時間: "9:00-10:00",
+          歌曲名稱: "小雨",
+          演唱者: "蓉蓉",
+        },
+      };
+      new Vue({
+        el: "#app",
+        data: data,
+      });
+    </script>
+  </body>
+</html>
