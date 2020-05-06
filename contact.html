@@ -16,14 +16,30 @@
   <style></style>
   <body>
     <div id="app">
-      <div class="container">
-        <span> {{index+1}} </span>
-        <a :href=" 'tel:0' + teacher[index].手機">
-          {{teacher[index].教師姓名}}</a
+      <div class="container mx-auto">
+        <h1>桃園社大講師</h1>
+        <div class="container mb-3">
+          <span> {{index+1}} </span>
+          <div class="card">
+            <a :href=" 'tel:0' + teacher[index].手機">
+              {{teacher[index].教師姓名}}</a
+            >
+          </div>
+        </div>
+
+        <a
+          href="javascript:;"
+          class="btn btn-outline-info btn-lg"
+          @click="changeIndex(-1)"
+          >上一位</a
+        >
+        <a
+          href="javascript:;"
+          class="btn btn-outline-info btn-lg"
+          @click="changeIndex(+1)"
+          >下一位</a
         >
       </div>
-      <a href="javascript:;" @click="changeIndex(-1)">Previous</a>
-      <a href="javascript:;" @click="changeIndex(+1)">Next</a>
     </div>
 
     <script
