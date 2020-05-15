@@ -42,16 +42,10 @@
       <hr />
 
       <div class="container-fluid">
-        <div class="row">
-          <div class="col">課程名稱</div>
-          <div class="col">地點</div>
-          <div class="col">時間</div>
-        </div>
         <div class="row" v-for="course in findcourse">
-          <div class="col">{{course.課程名稱}}</div>
-          <div class="col">{{course.地點}}</div>
-          <div class="col">{{course.時間}}</div>
-          <div class="col">
+          <div class="col rounded-lg text-center py-3 bg-info text-white">
+            <h3>{{course.課程名稱}}</h3>
+            <span>{{course.地點}}</span> <span>{{course.時間}}</span>
             <a
               :href="'tel:'+course.手機"
               class="btn btn-outline-primary fixed-bottom"
