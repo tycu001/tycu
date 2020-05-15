@@ -1485,5 +1485,14 @@
   new Vue({
     el: "#app",
     data: data,
+    computed: {
+      findcourse() {
+        if (this.input.pname) {
+          return this.courses.filter((item) => {
+            return item.教師姓名.indexOf(this.input.pname) != -1;
+          });
+        }
+      },
+    },
   });
 })(Vue);
