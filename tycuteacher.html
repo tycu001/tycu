@@ -47,7 +47,10 @@
           <div class="col rounded-lg text-center mb-2 py-3 bg-info text-white">
             <h3>{{course.課程名稱}}</h3>
             <span>{{course.地點}}</span> <span>{{course.時間}}</span>
-            <a :href="'tel:'+course.手機" class="btn btn-primary fixed-bottom">
+            <a
+              :href="'tel:'+course.手機"
+              class="btn btn-primary btn-lg fixed-bottom"
+            >
               {{course.教師姓名}}
             </a>
           </div>
