@@ -110,10 +110,10 @@
             <a href="" class="btn btn-primary btn-lg">簽到</a>
           </div>
           <div class="card-footer text-center">
-            <!-- <p>copyright @ 蘆山園社大</p> -->
             <h2 class="card-title text-center">
               {{teacher.name}} <small>講師</small>
             </h2>
+            <h6>上映日期：{{teacher.ptime}}</h6>
           </div>
         </div>
       </div>
@@ -142,10 +142,11 @@
             {
               id: "a01",
               name: "郭建甫",
+              ptime: "7月6日 星期一 9：30~11：30",
               foto:
                 "https://manofmany.com/wp-content/uploads/2019/06/50-Long-Haircuts-Hairstyle-Tips-for-Men-2.jpg",
               movie: "https://www.youtube.com/embed/Oc8tewsEy1Y",
-              pserial: "社區藝文與傳統藝術講座",
+              pserial: "第一場-社區藝文與傳統藝術講座",
               ptitle: "布袋戲新未來~允文弄舞一掌間",
               pjob: "不貳劇團偶劇團團長",
               pparam:
@@ -154,10 +155,11 @@
             {
               id: "a02",
               name: "陳正賢",
+              ptime: "7月6日 星期一 19：00~21：00",
               foto:
                 "data:image/jpeg;base64,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",
               movie: "https://www.youtube.com/embed/ef914_tBAus",
-              pserial: "觀光休閒講座",
+              pserial: "第二場-觀光休閒講座",
               ptitle: "山林政策—向山致敬‧山林活動安全",
               pjob: "桃園市觀光導覽解說員 | 蘆山園社區大學野鳥社講師",
               pparam:
@@ -166,10 +168,11 @@
             {
               id: "a03",
               name: "何碧雲",
+              ptime: "7月7日 星期二 9：30~11：30",
               foto:
                 "data:image/jpeg;base64,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",
               movie: "https://www.youtube.com/embed/kAZf1n-IW2I",
-              pserial: "生活美學與觀光農業講座",
+              pserial: "第三場-生活美學與觀光農業講座",
               ptitle: "",
               pjob: "蘆山園社區大學茶學課程講師",
               pparam: "",
@@ -177,10 +180,11 @@
             {
               id: "a04",
               name: "國防大學主任",
+              ptime: "7月7日 星期三 9：30~11：30",
               foto:
                 "https://manofmany.com/wp-content/uploads/2019/06/50-Long-Haircuts-Hairstyle-Tips-for-Men-5.jpg",
               movie: "https://www.youtube.com/embed/d41ZSFKBPcA",
-              pserial: "國防講座",
+              pserial: "第四場-國防講座",
               ptitle: "全民國防教育",
               pjob: "國防大學主任",
               pparam:
@@ -189,10 +193,11 @@
             {
               id: "a05",
               name: "林美卿",
+              ptime: "7月8日 星期三 9：30~11：30",
               foto:
                 "https://cdn.lifehack.org/wp-content/uploads/2015/01/alpha-woman.jpeg",
               movie: "https://www.youtube.com/embed/XAASI5YDG3g",
-              pserial: "性別平等講座",
+              pserial: "第五場-性別平等講座",
               ptitle: "新女性新生活工作坊系列",
               pjob: "蘆山園社區大學生命經絡學課程講師",
               pparam: "從女性生命教育的角度談紓壓保健",
@@ -200,10 +205,11 @@
             {
               id: "a06",
               name: "蔡明發",
+              ptime: "7月8日 星期三 19：00~21：00",
               foto:
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqD6Ex73eIRhfwiWPOd27SHV2v9g2zw1YF_LJxR3CpQiwvcDrg&usqp=CAU",
               movie: "https://www.youtube.com/embed/GveTAk727mM",
-              pserial: "社區藝術與生活美學講座",
+              pserial: "第六場-社區藝術與生活美學講座",
               ptitle: "新女性新生活工作坊系列",
               pjob: "蘆山園社區大學人文景觀攝影美學講師",
               pparam: "人文攝影訣竅",
@@ -211,10 +217,11 @@
             {
               id: "a07",
               name: "賴草",
+              ptime: "7月9日 星期四 9：30~11：30",
               foto:
                 "https://media.gettyimages.com/photos/portrait-of-beautiful-woman-picture-id652924830?s=612x612",
               movie: "https://www.youtube.com/embed/emrtMQ5mivk",
-              pserial: "性別平等講座",
+              pserial: "第七場-性別平等講座",
               ptitle: "新女性新生活工作坊系列",
               pjob: "蘆山園社區大學美化人生護膚彩妝講師",
               pparam: "如何讓女人更美麗",
@@ -222,10 +229,11 @@
             {
               id: "a08",
               name: "劉浩智",
+              ptime: "7月10日 星期五 19：00~21：00",
               foto:
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAxN13Puj140_29mpBmSKYGHDcLpHP39ve7Ma2GoArXpH7v317&usqp=CAU",
               movie: "https://www.youtube.com/embed/MV9_P6klL-Q",
-              pserial: "觀光休閒講座",
+              pserial: "第八場-觀光休閒講座",
               ptitle: "綠地圖Green Map操作入門",
               pjob: "蘆山園社區大學綠種子社團講師",
               pparam: "",
