@@ -27,7 +27,7 @@
     </style>
   </head>
   <body>
-    <div class="container-fluid jumbotron text-center">
+    <div class="container-fluid jumbotron text-center bg-success text-white">
       <h5>蘆山園社大公民週系列講座</h5>
     </div>
     <div id="app">
@@ -45,7 +45,7 @@
           />
 
           <div class="card-body">
-            <h5 class="card-title text-primary">
+            <h5 class="card-title text-success">
               <strong>
                 {{teacher.pserial}}
               </strong>
@@ -54,7 +54,7 @@
               {{teacher.pjob}}
             </p>
             <button
-              class="btn btn-primary btn-md"
+              class="btn btn-danger btn-md"
               data-toggle="modal"
               :data-target="'#'+teacher.id"
             >
@@ -108,8 +108,8 @@
               class="btn btn-primary btn-md"
               >簡報</a
             >
-            <a href="" class="btn btn-primary btn-md">簽到</a>
-            <a href="" class="btn btn-primary btn-md">問卷調查</a>
+            <a href="" class="btn btn-success btn-md">簽到</a>
+            <a href="" class="btn btn-success btn-md">問卷調查</a>
           </div>
           <div class="card-footer text-center">
             <h2 class="card-title text-center">
