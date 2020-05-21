@@ -23,12 +23,19 @@
     </style>
   </head>
   <body class="bg-dark">
+    <div class="jumbotron text-center">
+      <h5>公民週系列講座</h5>
+    </div>
     <div id="app">
       <div
         id="mycard"
         class="d-sm-flex flex-row justify-content-center align-items-center"
       >
-        <div class="card" style="width: 450px;" v-for="teacher in teachers">
+        <div
+          class="card my-2"
+          style="width: 450px;"
+          v-for="teacher in teachers"
+        >
           <div class="card-header bg-primary text-white">
             <h2 class="card-title text-center">
               {{teacher.name}} <small>講師</small>
@@ -102,7 +109,7 @@
               >簡報</a
             >
           </div>
-          <div class="card-footer text-right">
+          <div class="card-footer text-center">
             <p>copyright @ 桃園社大</p>
           </div>
         </div>
