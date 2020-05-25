@@ -29,7 +29,6 @@
           <thead>
             <tr>
               <th>編號</th>
-              <th>學號</th>
               <th>姓名</th>
               <th>團報價</th>
               <th>保險費</th>
@@ -39,8 +38,10 @@
           <tbody>
             <tr v-for="(bill,index) in showcourse">
               <td>{{index+1}}</td>
-              <td>{{bill.學號}}</td>
-              <td>{{bill.姓名}}</td>
+              <td>
+                <div>{{bill.學號}}</div>
+                <div>{{bill.姓名}}</div>
+              </td>
               <td>{{bill.課程學分費*.95}}</td>
               <td>{{bill.保險費收取}}</td>
               <td>{{bill.課程學分費*.95 +180 }}</td>
