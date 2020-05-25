@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="print.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3 class="text-center">班級團報單</h3>
+      <br />
+      <form action="post" action="#" id="printJS-form">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>學號</th>
+              <th>姓名</th>
+              <th>課程學分費</th>
+              <th>團報價</th>
+              <th>保險費</th>
+              <th>小計</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(bill,index) in showcourse">
+              <td>{{index+1}}</td>
+              <td>{{bill.學號}}</td>
+              <td>{{bill.姓名}}</td>
+              <td>{{bill.課程學分費}}</td>
+              <td>{{bill.課程學分費*.95}}</td>
+              <td>{{bill.保險費收取}}</td>
+              <td>{{bill.課程學分費*.95 +bill.保險費收取 }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+
+    <button type="button" onclick="printJS('printJS-form', 'html')">
+      Print Form
+    </button>
+    <a
+      href="https://www.google.com/cloudprint/addpublicprinter.html?printerid=490dc532-61ca-0aad-e834-eecb077327de&key=2456350146"
+      class="btn"
+    ></a>
+    <script src="print.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script> -->
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="tycugo.js"></script>
+  </body>
+</html>
