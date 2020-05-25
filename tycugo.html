@@ -28,22 +28,22 @@
         <table class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th>編號</th>
+              <th class="text-center">編號</th>
               <th>姓名</th>
-              <th>團報價</th>
-              <th>保險費</th>
+              <th class="text-center">團報價</th>
+              <th class="text-center">保險費</th>
               <th>小計</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(bill,index) in showcourse">
-              <td>{{index+1}}</td>
+              <td class="text-center">{{index+1}}</td>
               <td>
                 <div>{{bill.學號}}</div>
                 <div>{{bill.姓名}}</div>
               </td>
-              <td>{{bill.課程學分費*.95}}</td>
-              <td>{{bill.保險費收取}}</td>
+              <td class="text-center">{{bill.課程學分費*.95}}</td>
+              <td class="text-center">{{bill.保險費收取}}</td>
               <td>{{bill.課程學分費*.95 +180 }}</td>
             </tr>
           </tbody>
