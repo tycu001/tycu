@@ -1,4 +1,7 @@
 let data = {
+  input: {
+    cnumber: "1091C4038",
+  },
   bills: [
     {
       學期: "A10901",
@@ -35480,7 +35483,7 @@ new Vue({
   computed: {
     showcourse() {
       return this.bills.filter((item) => {
-        return item.課程編號 == "1091A1001";
+        return item.課程編號 == this.input.cnumber;
       });
     },
   },
