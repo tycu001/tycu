@@ -51,7 +51,7 @@
 
       <div class="d-sm-flex flex-wrap justify-content-between">
         <div class="card m-2" v-for="course in dircourse" style="width: 400px;">
-          <div class="card-header bg-primary text-white text-center">
+          <div class="card-header bg-info text-white text-center">
             <h5 class="card-title">
               {{course.課程編號}} {{course.課程名稱}}
             </h5>
@@ -60,8 +60,13 @@
             <h1 class="card-title text-center">{{course.教師姓名}}</h1>
           </div>
           <div class="card-footer">
-            <p class="card-text">{{course.學習中心}} / {{course.地點}}</p>
-            <p class="card-text text-right text-primary">
+            <p class="card-text">
+              {{course.學習中心}} / {{course.地點}}
+            </p>
+            <h4 class="card-title text-danger text-right">
+              價格：{{course.學分*1000}}
+            </h4>
+            <p class="card-text text-right text-info">
               {{course.上課星期}}{{course.上課時段}}{{course.上課開始時間}}
             </p>
           </div>
