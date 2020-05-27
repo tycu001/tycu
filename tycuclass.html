@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>桃園社大班級管理</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .item {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="jumbotron">
+      <h3>桃園社大班級管理</h3>
+    <p class="text-right text-danger">最新日期：2020/05/27</p>
+    </div>
+    <div class="container-fluid" id="app">
+      <div class="container">
+        <input type="text" class="form-control" v-model.trim="input.tname" placeholder="請輸入教師姓名查詢" autofocus>
+        
+      </div>
+      <br>
+      <p> 您查詢的講師名字為:  {{input.tname}} </p>
+      <section class="container-fluid">
+        <table class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>課程編號</th>
+              <th>課程名稱</th>
+              <th>學號</th>
+              <th>姓名</th>
+              <th>繳費日期</th>
+              <th>退費日期</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(student,index) in showclass">
+              <td> {{index+1}}</td>
+              <td>{{student.課程編號}}</td>
+              <td>{{student.課程名稱}}</td>
+              <td>{{student.學號}}</td>
+              <td>{{student.姓名}}</td>
+              <td>{{student.繳費日期}}</td>
+              <td>{{student.退費日期}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>  
+    </div>
+
+    
+   
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/e3d046e9d4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="tycuclass.js"></script>
+  </body>
+</html>
