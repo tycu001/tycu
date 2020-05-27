@@ -36,7 +36,7 @@
       class="container-fluid jumbotron text-center bg-dark text-white animated slideInDown"
       style="opacity: 0.8;"
     >
-      <h4>2020 秋季課程</h4>
+      <h3>2020 秋季課程</h3>
     </div>
     <div id="app">
       <div class="container">
@@ -49,9 +49,14 @@
         />
       </div>
 
-      <div class="d-sm-flex flex-wrap justify-content-between">
-        <div class="card m-2" v-for="course in dircourse" style="width: 400px;">
+      <div class="d-sm-flex flex-wrap justify-content-between mb-5">
+        <div
+          class="card m-2"
+          v-for="(course,index) in dircourse"
+          style="width: 400px;"
+        >
           <div class="card-header bg-info text-white text-center">
+            <p>第{{index+1}}門</p>
             <h5 class="card-title">
               {{course.課程編號}} {{course.課程名稱}}
             </h5>
@@ -64,10 +69,16 @@
               {{course.學習中心}} / {{course.地點}}
             </p>
             <h4 class="card-title text-danger text-right">
-              價格：{{course.學分*1000}}
+              NT$ {{course.學分*1000*.95}} |
+              <span style="text-decoration: line-through;"
+                >NT${{course.學分*1000}}</span
+              >
             </h4>
             <p class="card-text text-right text-info">
               {{course.上課星期}}{{course.上課時段}}{{course.上課開始時間}}
+            </p>
+            <p class="text-center">
+              共 {{dircourse.length}} 門
             </p>
           </div>
         </div>
