@@ -19,7 +19,8 @@
     />
     <style>
       body {
-        background: url("https://images.unsplash.com/photo-1542318099375-c20b8c991bbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+        background-color: rgb(243, 231, 210);
+        /* background: url("https://images.unsplash.com/photo-1542318099375-c20b8c991bbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"); */
         background-size: cover;
         background-attachment: fixed;
       }
@@ -56,29 +57,91 @@
           style="width: 320px;"
         >
           <div class="card-header bg-info text-white text-center">
-            <p>第{{index+1}}門</p>
             <h5 class="card-title">
               {{course.課程編號}} {{course.課程名稱}}
             </h5>
+            <h6 class="card-title text-center">{{course.教師姓名}}</h6>
           </div>
           <div class="card-body">
-            <h1 class="card-title text-center">{{course.教師姓名}}</h1>
+            <!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" :data-target=" '#'+ course.課程編號">
+  介紹
+</button>
+
+<!-- The Modal -->
+<div class="modal" :id="course.課程編號">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-primary text-white">
+        <h4 class="modal-title "> {{course.課程名稱}} </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第1週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第1週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第2週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第2週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第3週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第3週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第4週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第4週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第5週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第5週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第6週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第6週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第7週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第7週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第8週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第8週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第9週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第9週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第10週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第10週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第11週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第11週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第12週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第12週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第13週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第13週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第14週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第14週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第15週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第15週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第16週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第16週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第17週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第17週課程}}</p>
+        <h6 class="border border-top-0 border-primary border-left-0 border-right-0 pb-2">第18週課程</h6>
+        <p class="bg-primary text-white p-2">{{course.第18週課程}}</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
           </div>
           <div class="card-footer">
             <p class="card-text">
               {{course.學習中心}} / {{course.地點}}
             </p>
             <h4 class="card-title text-danger text-right">
-              NT$ {{course.學分*1000*.95}} |
-              <span style="text-decoration: line-through;"
-                >NT${{course.學分*1000}}</span
-              >
+                NT${{course.學分*1000}}
             </h4>
             <p class="card-text text-right text-info">
               {{course.上課星期}}{{course.上課時段}}{{course.上課開始時間}}
             </p>
+            
             <p class="text-center">
-              共 {{dircourse.length}} 門
+              第{{index+1}}門 / 共 {{dircourse.length}} 門
             </p>
           </div>
         </div>
