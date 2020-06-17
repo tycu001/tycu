@@ -24,7 +24,7 @@
 
       }
       body {
-        background-color: #ccc;
+        background-color: rgba(240, 238, 238,1);
       }
 
       .name {
@@ -39,16 +39,43 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="d-flex justify-content-center">
-        <div>
-          <h4 class="p-2">Explore</h4>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">桃園社大</a>
+    
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container my-3 ">
+      <div class="d-flex justify-content-center" style="border: solid 2px white;">
+        <div >
+          <h5 class="p-2 text-white">Explore eveything</h5>
         </div>
         <div>
-          <h4 class="p-2">Intering</h4>
+          <h5 class="p-2 text-white">Interesting</h5>
         </div>
         <div>
-          <h4 class="p-2">Know friend</h4>
+          <h5 class="p-2 text-white">Make friends</h5>
         </div>
       </div>
     </div>
@@ -56,11 +83,11 @@
       
 
       <section class="container">
-        <h5>推薦課程</h5>
+        <h5>秋季推薦課程</h5>
         </div>
-        <div class="container p-0" style="width: 350px;background-color: #fff;">
+        <div id="suggest" class="container p-0 m-3" style="width: 350px;background-color: #fff;">
           <div class="course d-flex">
-            <img src="https://picsum.photos/150/100/?random=1">
+            <img src="https://picsum.photos/200/100/?random=10">
             <div class="txt p-2">
               <h6>生活美語初級2</h6>
               <p class="name">黃貞惠</p>
@@ -69,8 +96,8 @@
           </div>
 
           <div class="course d-flex">
-            <img src="https://picsum.photos/150/100/?random=10">
-            <div class="txt p-2">
+            <img src="https://picsum.photos/200/100/?random=20" class="order-2">
+            <div class="txt p-2 order-1">
               <h6>實用韓國首爾大學韓國語1B</h6>
               <p class="name">黃貞惠</p>
               <p class="price">$2000</p>
@@ -78,7 +105,7 @@
           </div>
 
           <div class="course d-flex">
-            <img src="https://picsum.photos/150/100/?random=30">
+            <img src="https://picsum.photos/200/100/?random=30">
             <div class="txt p-2">
               <h6>認識蠟染畫藝術</h6>
               <p class="name">黃貞惠</p>
