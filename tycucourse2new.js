@@ -8534,7 +8534,23 @@ new Vue({
       return this.courses.filter((item)=>{
         return item.星期 == "星期二"
       })
+    },
+    dirday2a(){
+        return this.dircoursebyday2.filter((item)=>{
+            return item.時段 == "早上"
+        })
+    },
+    dirday2b(){
+        return this.dircoursebyday2.filter((item)=>{
+            return item.時段 == "下午"
+        })
+    },
+    dirday2c(){
+        return this.dircoursebyday2.filter((item)=>{
+            return item.時段 == "晚上"
+        })
     }
+
     },
 });
 
@@ -8543,10 +8559,25 @@ new Vue({
   data: data,
   computed: {
     dircoursebyday3(){
-      return this.courses.filter((item)=>{
-        return item.星期 == "星期三"
-      })
-    }
+        return this.courses.filter((item)=>{
+          return item.星期 == "星期三"
+        })
+      },
+      dirday3a(){
+          return this.dircoursebyday3.filter((item)=>{
+              return item.時段 == "早上"
+          })
+      },
+      dirday3b(){
+          return this.dircoursebyday3.filter((item)=>{
+              return item.時段 == "下午"
+          })
+      },
+      dirday3c(){
+          return this.dircoursebyday3.filter((item)=>{
+              return item.時段 == "晚上"
+          })
+      }
     },
 });
 
@@ -8558,7 +8589,24 @@ new Vue({
       return this.courses.filter((item)=>{
         return item.星期 == "星期四"
       })
-    }
+    },
+      dirday4a(){
+        return this.dircoursebyday4.filter((item)=>{
+            return item.時段 == "早上"
+        })
+        
+    },
+    dirday4b(){
+        return this.dircoursebyday4.filter((item)=>{
+            return item.時段 == "下午"
+        })
+    },
+    dirday4c(){
+        return this.dircoursebyday4.filter((item)=>{
+            return item.時段 == "晚上"
+        })
+    } 
+    
     },
 });
 
@@ -8570,7 +8618,23 @@ new Vue({
       return this.courses.filter((item)=>{
         return item.星期 == "星期五"
       })
-    }
+    },
+    dirday5a(){
+        return this.dircoursebyday5.filter((item)=>{
+            return item.時段 == "早上"
+        })
+        
+    },
+    dirday5b(){
+        return this.dircoursebyday5.filter((item)=>{
+            return item.時段 == "下午"
+        })
+    },
+    dirday5c(){
+        return this.dircoursebyday5.filter((item)=>{
+            return item.時段 == "晚上"
+        })
+    } 
     },
 });
 
@@ -8582,7 +8646,23 @@ new Vue({
       return this.courses.filter((item)=>{
         return item.星期 == "星期六"
       })
-    }
+    },
+    dirday6a(){
+        return this.dircoursebyday6.filter((item)=>{
+            return item.時段 == "早上"
+        })
+        
+    },
+    dirday6b(){
+        return this.dircoursebyday6.filter((item)=>{
+            return item.時段 == "下午"
+        })
+    },
+    dirday6c(){
+        return this.dircoursebyday6.filter((item)=>{
+            return item.時段 == "晚上"
+        })
+    } 
     },
 });
 
@@ -8594,6 +8674,22 @@ new Vue({
       return this.courses.filter((item)=>{
         return item.星期 == "星期日"
       })
-    }
+    },
+    dirday7a(){
+        return this.dircoursebyday7.filter((item)=>{
+            return item.時段 == "早上"
+        })
+        
+    },
+    dirday7b(){
+        return this.dircoursebyday7.filter((item)=>{
+            return item.時段 == "下午"
+        })
+    },
+    dirday7c(){
+        return this.dircoursebyday7.filter((item)=>{
+            return item.時段 == "晚上"
+        })
+    } 
     },
 });
