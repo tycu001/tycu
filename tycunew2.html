@@ -74,146 +74,184 @@
     </div>
 
     <div id="app">
-      <section class="container">
+      <section id="tycu01" class="container">
         <h4 class="p-2 text-center">Explore eveything</h4>
         <h5>秋季推薦課程</h5>
         <div
           id="suggest"
           class="container p-0"
-          style="width: 320px; height: 100vh; background-color: #fff; margin: auto;"
+          style="width: 320px; background-color: #fff; margin: auto;"
         >
-          <div class="course d-flex">
-            <img
-              src="https://lceicentre.weebly.com/uploads/1/0/6/5/106557595/21175945414c5a25d4848f2_1_orig.jpg"
-              style="width: 200px; border-bottom: solid 1px white;"
-            />
+          <div class="course d-flex" v-for="recommend in recommends">    
+            <img :src="recommend.src" style="width: 200px;">
             <div class="txt p-2">
-              
-                <a href="#" data-toggle="modal" data-target="#myModal"> <h6>1092C4032</h6> <h6>華佗五禽戲氣功與太極拳</h6> </a>                         
-              <!-- The Modal -->
-              <div class="modal" id="myModal">
-                <div class="modal-dialog">
-                  <div class="modal-content">
+              <a href="#" data-toggle="modal" :data-target="'#'+recommend.id"> <h6> {{recommend.課程編號}} <br> {{recommend.課程名稱}} </h6>  </a>                         
+              <small>  {{recommend.教師姓名}} 老師 </small>
+            </div>
+            
+       
+            <!-- The Modal -->
+            <div class="modal" :id="recommend.id">
+              <div class="modal-dialog">
+                <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                      <h4 class="modal-title">1092C4032 華佗五禽戲氣功與太極拳</h4>
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                      Modal body..
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                      <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary ">報名</a>
-                      <button type="button" class="btn btn-danger" data-dismiss="modal">關閉</button>
-                    </div>
-
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">{{recommend.課程編號}}-{{recommend.課程名稱}}</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <h5 class="text-danger">
+                      材料費 - {{recommend.材料費}}
+                    </h5>
+
+                    <hr class="bg-danger">
+
+                    <h6>第1週課程-{{recommend.第1週課程}}</h6>
+                    <hr>
+    
+                    <h6>第2週課程 - {{recommend.第2週課程}} </h6>
+                    <hr>
+                                      
+                    <h6>第3週課程 - {{recommend.第3週課程}} </h6>
+                    <hr>
+                    <h6>第4週課程 -  {{recommend.第4週課程}} </h6>
+                    <hr>
+                    <h6>第5週課程 -  {{recommend.第5週課程}}  </h6>
+                    <hr>
+                    <h6>第6週課程 - {{recommend.第6週課程}} </h6>
+                    <hr>
+                    <h6>第7週課程 - {{recommend.第7週課程}} </h6>
+                    <hr>
+                    <h6>第8週課程 -  {{recommend.第8週課程}} </h6>
+                    <hr>
+                    <h6>第9週課程 - {{recommend.第9週課程}} </h6>
+                    <hr>
+                    <h6>第10週課程 -  {{recommend.第10週課程}} </h6>
+                    <hr>
+                    <h6>第11週課程 -  {{recommend.第11週課程}} </h6>
+                    <hr>
+                    <h6>第12週課程 - {{recommend.第12週課程}} </h6>
+                   <hr>
+                    <h6>第13週課程 - {{recommend.第13週課程}}  </h6>
+                    <hr>
+                    <h6>第14週課程 - {{recommend.第14週課程}} </h6>
+                    <hr>
+                    <h6>第15週課程 - {{recommend.第15週課程}} </h6>
+                    <hr>
+                    <h6>第16週課程 - {{recommend.第16週課程}} </h6>
+                    <hr>
+                    <h6>第17週課程 - {{recommend.第17週課程}} </h6>
+                    <hr>
+                    <h6>第18週課程 - {{recommend.第18週課程}} </h6>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
                 </div>
               </div>
-              <small>邵雨亭老師</small>
-              <p><small>每週星期五 9:30~11:30</small></p>
-              
             </div>
-          </div>
 
-          <div class="course d-flex">
-            <img
-              src="https://cw1.tw/CH/images/channel_master/f8a74967-da55-4203-9035-8dfcdb86edcc.jpg"
-              style="width: 200px; border-bottom: solid 1px white;"
-            />
-            <div class="txt p-2 order-1">
-              <h6>
-                <a href="https://ty.twcc.org.tw/course/"
-                  >1092C3018 幸福滋味做烘焙初級1
-                </a>               
-              </h6>
-              <small>楊肅懿老師</small>
-              <p><small>每週星期四 08:30~11:30 </small></p>
-            </div>
-          </div>
 
-          <div class="course d-flex">
-            <img
-              src="https://i.ytimg.com/vi/p7ioze-ki4g/maxresdefault.jpg"
-              style="width: 200px; border-bottom: solid 1px white;"
-            />
-            <div class="txt p-2">
-              <h6>
-                <a href="https://ty.twcc.org.tw/course/">1092C5006 箏心禪意學古箏</a>
-              </h6>
-              <small>鄒文玉老師</small>
-              <p><small>每週星期二 09:00~11:00 </small></p>
-            </div>
-          </div>
-
-          <div class="course d-flex">
-            <img
-              src="https://i1.wp.com/taiwan.jewelry/wp-content/uploads/2019/12/1576674364_hqdefault.jpg?fit=480%2C360&ssl=1&resize=350%2C200"
-              style="width: 200px; border-bottom: solid 1px white;"
-            />
-            <div class="txt p-2">
-              <h6>
-                <a href="https://ty.twcc.org.tw/course/">1092C6006 珠寶銀飾金工實作</a>              
-              </h6>
-              <small>李淑珍老師</small>
-              <p><small>每週星期三 19:00~21:00 </small></p>
-            </div>
-          </div>
-
-         
+          </div>     
       </section>
 
-      <section class="container mb-5">
-        <h4 class="p-2 text-center">Interesting</h4>
-        <h5>秋季課程</h5>
+      <section id="tycu02" class="container">
+        <h4 class="p-2 text-center">Know friends</h4>
+        <h5>秋季新課程</h5>
         <div
-          id="hot"
+          id="new"
           class="container p-0"
           style="width: 320px; background-color: #fff; margin: auto;"
         >
-          <div class="course d-flex">
-            <img src="https://picsum.photos/200/100/?random=40" />
+          <div class="course d-flex" v-for="newcourse in newcourses">    
+            <img :src="newcourse.src" style="width: 200px;">
             <div class="txt p-2">
-              <h6>
-                <a href="https://ty.twcc.org.tw/course/">婚姻與伴侶關係</a>
-              </h6>
-              <p class="name">朱顗臻</p>
-              <p class="price">$2000</p>
+              <a href="#" data-toggle="modal" :data-target="'#'+newcourse.id"> <h6> {{newcourse.課程編號}} <br> {{newcourse.課程名稱}} </h6>  </a>                         
+              <small>  {{newcourse.教師姓名}} 老師 </small>
             </div>
-          </div>
+            
+       
+            <!-- The Modal -->
+            <div class="modal" :id="newcourse.id">
+              <div class="modal-dialog">
+                <div class="modal-content">
 
-          <div class="course d-flex">
-            <img src="https://picsum.photos/200/100/?random=50" />
-            <div class="txt p-2 order-1">
-              <h6>
-                <a href="https://ty.twcc.org.tw/course/">琵琶與樂曲賞析初級</a>
-              </h6>
-              <p class="name">郭美文</p>
-              <p class="price">$2000</p>
-            </div>
-          </div>
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">{{newcourse.課程編號}}-{{newcourse.課程名稱}}</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
 
-          <div class="course d-flex">
-            <img src="https://picsum.photos/200/100/?random=60" />
-            <div class="txt p-2">
-              <h6>
-                <a href="https://ty.twcc.org.tw/course/"
-                  >趣味素描與西洋藝術賞析</a
-                >
-              </h6>
-              <p class="name">黃孟娟</p>
-              <p class="price">$2000</p>
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <h5 class="text-danger">
+                      材料費 - {{newcourse.材料費}}
+                    </h5>
+
+                    <hr class="bg-danger">
+
+                    <h6>第1週課程-{{newcourse.第1週課程}}</h6>
+                    <hr>
+    
+                    <h6>第2週課程 - {{newcourse.第2週課程}} </h6>
+                    <hr>
+                                      
+                    <h6>第3週課程 - {{newcourse.第3週課程}} </h6>
+                    <hr>
+                    <h6>第4週課程 -  {{newcourse.第4週課程}} </h6>
+                    <hr>
+                    <h6>第5週課程 -  {{newcourse.第5週課程}}  </h6>
+                    <hr>
+                    <h6>第6週課程 - {{newcourse.第6週課程}} </h6>
+                    <hr>
+                    <h6>第7週課程 - {{newcourse.第7週課程}} </h6>
+                    <hr>
+                    <h6>第8週課程 -  {{newcourse.第8週課程}} </h6>
+                    <hr>
+                    <h6>第9週課程 - {{newcourse.第9週課程}} </h6>
+                    <hr>
+                    <h6>第10週課程 -  {{newcourse.第10週課程}} </h6>
+                    <hr>
+                    <h6>第11週課程 -  {{newcourse.第11週課程}} </h6>
+                    <hr>
+                    <h6>第12週課程 - {{newcourse.第12週課程}} </h6>
+                   <hr>
+                    <h6>第13週課程 - {{newcourse.第13週課程}}  </h6>
+                    <hr>
+                    <h6>第14週課程 - {{newcourse.第14週課程}} </h6>
+                    <hr>
+                    <h6>第15週課程 - {{newcourse.第15週課程}} </h6>
+                    <hr>
+                    <h6>第16週課程 - {{newcourse.第16週課程}} </h6>
+                    <hr>
+                    <h6>第17週課程 - {{newcourse.第17週課程}} </h6>
+                    <hr>
+                    <h6>第18週課程 - {{newcourse.第18週課程}} </h6>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <h6 class="mt-3 text-right">更多課程...</h6>
+
+
+          </div>     
       </section>
-    </div>
+
+      <h6 class="my-5 text-right container"><a href="https://ty.twcc.org.tw/course/">更多課程.....</a></h6>
+      <br>
+    </div>  
+
 
     <div class="btn-group fixed-bottom mt-5">
       <a href="tel:03-3318897" class="btn btn-primary">客服電話</a>
@@ -237,6 +275,6 @@
     ></script>
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="tycucourse.js"></script>
+    <script src="tycucourse2newmain.js"></script>
   </body>
 </html>
