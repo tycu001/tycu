@@ -1,4 +1,5 @@
 let data = {
+    byday:"",
     courses: [
         {
             "課程編號": "1092A1001",
@@ -8492,17 +8493,18 @@ let data = {
             "第17週課程": "主題：氣球設計義賣\n內容：配合社區義賣募款活動服務、關懷弱勢團體，營造社區和諧，促進團結進步.\n",
             "第18週課程": "回顧與分享本學期結業成果展"
         }
-    ]}
+    ]
+}
 
 
 
 new Vue({
-  el: "#day01",
+  el: "#app",
   data: data,
   computed: {
     dircoursebyday1(){
       return this.courses.filter((item)=>{
-        return item.星期 == "星期一"
+        return item.星期 == this.byday
       })
     },
     dirday1a(){
@@ -8522,174 +8524,9 @@ new Vue({
     }
 
 
-    },
+}
     
 });
 
-new Vue({
-  el: "#day02",
-  data: data,
-  computed: {
-    dircoursebyday2(){
-      return this.courses.filter((item)=>{
-        return item.星期 == "星期二"
-      })
-    },
-    dirday2a(){
-        return this.dircoursebyday2.filter((item)=>{
-            return item.時段 == "早上"
-        })
-    },
-    dirday2b(){
-        return this.dircoursebyday2.filter((item)=>{
-            return item.時段 == "下午"
-        })
-    },
-    dirday2c(){
-        return this.dircoursebyday2.filter((item)=>{
-            return item.時段 == "晚上"
-        })
-    }
 
-    },
-});
-
-new Vue({
-  el: "#day03",
-  data: data,
-  computed: {
-    dircoursebyday3(){
-        return this.courses.filter((item)=>{
-          return item.星期 == "星期三"
-        })
-      },
-      dirday3a(){
-          return this.dircoursebyday3.filter((item)=>{
-              return item.時段 == "早上"
-          })
-      },
-      dirday3b(){
-          return this.dircoursebyday3.filter((item)=>{
-              return item.時段 == "下午"
-          })
-      },
-      dirday3c(){
-          return this.dircoursebyday3.filter((item)=>{
-              return item.時段 == "晚上"
-          })
-      }
-    },
-});
-
-new Vue({
-  el: "#day04",
-  data: data,
-  computed: {
-    dircoursebyday4(){
-      return this.courses.filter((item)=>{
-        return item.星期 == "星期四"
-      })
-    },
-      dirday4a(){
-        return this.dircoursebyday4.filter((item)=>{
-            return item.時段 == "早上"
-        })
-        
-    },
-    dirday4b(){
-        return this.dircoursebyday4.filter((item)=>{
-            return item.時段 == "下午"
-        })
-    },
-    dirday4c(){
-        return this.dircoursebyday4.filter((item)=>{
-            return item.時段 == "晚上"
-        })
-    } 
     
-    },
-});
-
-new Vue({
-  el: "#day05",
-  data: data,
-  computed: {
-    dircoursebyday5(){
-      return this.courses.filter((item)=>{
-        return item.星期 == "星期五"
-      })
-    },
-    dirday5a(){
-        return this.dircoursebyday5.filter((item)=>{
-            return item.時段 == "早上"
-        })
-        
-    },
-    dirday5b(){
-        return this.dircoursebyday5.filter((item)=>{
-            return item.時段 == "下午"
-        })
-    },
-    dirday5c(){
-        return this.dircoursebyday5.filter((item)=>{
-            return item.時段 == "晚上"
-        })
-    } 
-    },
-});
-
-new Vue({
-  el: "#day06",
-  data: data,
-  computed: {
-    dircoursebyday6(){
-      return this.courses.filter((item)=>{
-        return item.星期 == "星期六"
-      })
-    },
-    dirday6a(){
-        return this.dircoursebyday6.filter((item)=>{
-            return item.時段 == "早上"
-        })
-        
-    },
-    dirday6b(){
-        return this.dircoursebyday6.filter((item)=>{
-            return item.時段 == "下午"
-        })
-    },
-    dirday6c(){
-        return this.dircoursebyday6.filter((item)=>{
-            return item.時段 == "晚上"
-        })
-    } 
-    },
-});
-
-new Vue({
-  el: "#day07",
-  data: data,
-  computed: {
-    dircoursebyday7(){
-      return this.courses.filter((item)=>{
-        return item.星期 == "星期日"
-      })
-    },
-    dirday7a(){
-        return this.dircoursebyday7.filter((item)=>{
-            return item.時段 == "早上"
-        })
-        
-    },
-    dirday7b(){
-        return this.dircoursebyday7.filter((item)=>{
-            return item.時段 == "下午"
-        })
-    },
-    dirday7c(){
-        return this.dircoursebyday7.filter((item)=>{
-            return item.時段 == "晚上"
-        })
-    } 
-    },
-});

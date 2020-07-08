@@ -57,14 +57,30 @@
 
     <div id="app">
        
-      <div class="jumbotron">
-        <h2 class="m-3 p-5 text-center">上課星期查詢</h2>
+      <div class="jumbotron text-white" style="background-color: cadetblue;">
+        <h2 class="m-3 p-5 text-center">每週課表查詢</h2>
+        <select name="" id="" class="form-control" v-model="byday">
+          <option value="">選擇星期</option>
+          <option value="星期一">星期一</option>
+          <option value="星期二">星期二</option>
+          <option value="星期三">星期三</option>
+          <option value="星期四">星期四</option>
+          <option value="星期五">星期五</option>
+          <option value="星期六">星期六</option>
+          <option value="星期日">星期日</option>
+        </select>
+      </div>
+
+      <div class="container text-center" >
+        <a href="#am" class="btn px-3 text-white" style="background-color: cadetblue;">早上</a>
+        <a href="#pm" class="btn px-3 text-white" style="background-color: cadetblue;">下午</a>
+        <a href="#night" class="btn  px-3 text-white" style="background-color: cadetblue;">晚上</a>
       </div>
         
-      <div id="day01" class="container" style="background-color: rgb(230, 229, 229);">
-         <h5 class="text-center p-2">星期一</h5>
+      <div class="container" style="background-color: rgb(230, 229, 229);">
+         <h5 class="text-center p-2"> {{byday}} </h5>
          <hr>
-         <h6>早上</h6>
+         <h6 v-show="byday" id="am">早上</h6>
          <div class="container border mb-2" v-for="coursea,index in dirday1a" style="background-color: white;">
             <p class="bg-primary text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
             <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
@@ -73,7 +89,7 @@
             <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
          </div>
         
-         <h6>下午</h6>
+         <h6 v-show="byday" id="pm">下午</h6>
          <div class="container border mb-2" v-for="coursea,index in dirday1b" style="background-color: white;">
           <p class="bg-danger text-white text-center">{{index+1}} {{coursea.課程編號}}</p>
           <h4 class="text-center text-danger">{{coursea.課程名稱}} </h4>
@@ -82,7 +98,7 @@
           <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
         </div>
 
-         <h6>晚上</h6>
+         <h6 v-show="byday" id="night">晚上</h6>
          <div class="container border mb-2" v-for="coursea,index in dirday1c" style="background-color: white;">
           <p class="bg-dark text-white text-center">{{index+1}} {{coursea.課程編號}}</p>
           <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
@@ -93,203 +109,14 @@
 
       </div>
 
-      <div id="day02" class="container" style="background-color: rgb(230, 229, 229);">
-        <h5 class="text-center p-2">星期二</h5>
-        <hr>
-        <h6>早上</h6>
-        <div class="container border mb-2" v-for="coursea,index in dirday2a" style="background-color: white;">
-           <p class="bg-primary text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-           <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-           <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-           <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-           <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-        </div>
-
-        <h6>下午</h6>
-        <div class="container border mb-2" v-for="coursea,index in dirday2b" style="background-color: white;">
-           <p class="bg-danger text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-           <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-           <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-           <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-           <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-        </div>
-
-        <h6>晚上</h6>
-        <div class="container border mb-2" v-for="coursea,index in dirday2c" style="background-color: white;">
-           <p class="bg-dark text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-           <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-           <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-           <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-           <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-        </div>
-
-     </div>
-
-     <div id="day03" class="container" style="background-color: rgb(230, 229, 229);">
-      <h5 class="text-center p-2">星期三</h5>
-      <hr>
-      <h6>早上</h6>
-      <div class="container border mb-2" v-for="coursea,index in dirday3a" style="background-color: white;">
-         <p class="bg-primary text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-         <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-         <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-         <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-         <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-      </div>
-
-      <h6>下午</h6>
-      <div class="container border mb-2" v-for="coursea,index in dirday3b" style="background-color: white;">
-         <p class="bg-danger text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-         <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-         <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-         <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-         <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-      </div>
-
-      <h6>晚上</h6>
-      <div class="container border mb-2" v-for="coursea,index in dirday3c" style="background-color: white;">
-         <p class="bg-dark text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-         <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-         <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-         <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-         <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-      </div>
-
-   </div>
-
-   <div id="day04" class="container" style="background-color: rgb(230, 229, 229);">
-    <h5 class="text-center p-2">星期四</h5>
-    <hr>
-    <h6>早上</h6>
-    <div class="container border mb-2" v-for="coursea,index in dirday4a" style="background-color: white;">
-       <p class="bg-primary text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-       <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-       <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-       <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-       <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-    </div>
-
-    <h6>下午</h6>
-    <div class="container border mb-2" v-for="coursea,index in dirday4b" style="background-color: white;">
-       <p class="bg-danger text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-       <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-       <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-       <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-       <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-    </div>
-
-    <h6>晚上</h6>
-    <div class="container border mb-2" v-for="coursea,index in dirday4c" style="background-color: white;">
-       <p class="bg-dark text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-       <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-       <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-       <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-       <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-    </div>
-
- </div>
-
- <div id="day05" class="container" style="background-color: rgb(230, 229, 229);">
-  <h5 class="text-center p-2">星期五</h5>
-  <hr>
-  <h6>早上</h6>
-  <div class="container border mb-2" v-for="coursea,index in dirday5a" style="background-color: white;">
-     <p class="bg-primary text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-     <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-     <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-     <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-     <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-  </div>
-
-  <h6>下午</h6>
-  <div class="container border mb-2" v-for="coursea,index in dirday5b" style="background-color: white;">
-     <p class="bg-danger text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-     <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-     <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-     <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-     <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-  </div>
-
-  <h6>晚上</h6>
-  <div class="container border mb-2" v-for="coursea,index in dirday5c" style="background-color: white;">
-     <p class="bg-dark text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-     <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-     <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-     <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-     <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-  </div>
-
-</div>
-
       
-<div id="day06" class="container" style="background-color: rgb(230, 229, 229);">
-  <h5 class="text-center p-2">星期六</h5>
-  <hr>
-  <h6>早上</h6>
-  <div class="container border mb-2" v-for="coursea,index in dirday6a" style="background-color: white;">
-     <p class="bg-primary text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-     <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-     <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-     <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-     <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-  </div>
-
-  <h6>下午</h6>
-  <div class="container border mb-2" v-for="coursea,index in dirday6b" style="background-color: white;">
-     <p class="bg-danger text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-     <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-     <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-     <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-     <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-  </div>
-
-  <h6>晚上</h6>
-  <div class="container border mb-2" v-for="coursea,index in dirday6c" style="background-color: white;">
-     <p class="bg-dark text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-     <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-     <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-     <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-     <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-  </div>
-
-</div>
-
-      
-<div id="day07" class="container" style="background-color: rgb(230, 229, 229);">
-  <h5 class="text-center p-2">星期日</h5>
-  <hr>
-  <h6>早上</h6>
-  <div class="container border mb-2" v-for="coursea,index in dirday7a" style="background-color: white;">
-     <p class="bg-primary text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-     <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-     <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-     <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-     <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-  </div>
-
-  <h6>下午</h6>
-  <div class="container border mb-2" v-for="coursea,index in dirday7b" style="background-color: white;">
-     <p class="bg-danger text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-     <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-     <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-     <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-     <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-  </div>
-
-  <h6>晚上</h6>
-  <div class="container border mb-2" v-for="coursea,index in dirday7c" style="background-color: white;">
-     <p class="bg-dark text-white text-center shadow-sm">{{index+1}} {{coursea.課程編號}}</p>
-     <h4 class="text-center text-primary">{{coursea.課程名稱}} </h4>
-     <h5 class="text-center text-primary"> {{coursea.教師姓名}}</h5>
-     <p> <small>開課時期： {{coursea.開課日期}} ( {{coursea.星期}} )  上課時間： {{coursea.上課時間}}</small> </p>
-     <p class="text-right"> <small>上課地點：{{coursea.上課地點}}</small> </p>
-  </div>
 
 </div>
     </div>
 
     <div class="btn-group fixed-bottom mt-5">
         <a href="tel:03-3318897" class="btn btn-primary">客服電話</a>
+        <a href="#app" class="btn btn-primary text-white">查詢</a>
         <a href="mailto:tycu003@gmail.com" class="btn btn-primary">客服信箱</a>
     </div>
 
