@@ -97,16 +97,19 @@
                 <div class="modal-content">
 
                   <!-- Modal Header -->
-                  <div class="modal-header">
-                    <h4 class="modal-title">{{recommend.課程編號}}-{{recommend.課程名稱}}</h4>
+                  <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title">{{recommend.課程名稱}}({{recommend.課程編號}})</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
 
                   <!-- Modal body -->
                   <div class="modal-body">
-                    <h5 class="text-danger">
+                    <p class="text-center">{{recommend.上課點}} </p>
+                    <p class="text-right"> <small>{{recommend.上課地點}}</small> </p>
+                    <hr>
+                    <p class="text-danger">
                       材料費 - {{recommend.材料費}}
-                    </h5>
+                    </p>
 
                     <hr class="bg-danger">
                      
@@ -191,7 +194,8 @@
 
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <span class="text-center text-danger">{{recommend.開課日期}} / {{recommend.星期}} /  {{recommend.期間}}</span>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">退出</button>
                   </div>
 
                 </div>
@@ -224,13 +228,16 @@
                 <div class="modal-content">
 
                   <!-- Modal Header -->
-                  <div class="modal-header">
+                  <div class="modal-header bg-primary text-white">
                     <h4 class="modal-title">{{newcourse.課程編號}}-{{newcourse.課程名稱}}</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
 
                   <!-- Modal body -->
                   <div class="modal-body">
+                    <p class="text-center">{{newcourse.上課點}} </p>
+                    <p class="text-right"> <small>{{newcourse.上課地點}}</small> </p>
+                    <hr>
                     <h5 class="text-danger">
                       材料費 - {{newcourse.材料費}}
                     </h5>
@@ -317,7 +324,8 @@
 
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <span class="text-center text-danger">{{newcourse.開課日期}} / {{newcourse.星期}} /  {{newcourse.期間}}</span>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">退出</button>
                   </div>
 
                 </div>
