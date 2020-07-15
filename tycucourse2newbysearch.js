@@ -9176,6 +9176,11 @@ let data = {
 new Vue({
   el: "#app",
   data: data,
+  methods: {
+      clearcontent(){
+          this.bycourse=""
+      }
+  },
   computed: {
     dircoursebyteacher(){
       if(this.byteahcer){
