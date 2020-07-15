@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃園社大課表查詢</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      #app h3,h4 {
+        color: white;
+      }
+      #byday option {
+        color: darkcyan;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top"">
+        <!-- Brand -->
+        <a class="navbar-brand" href="tycunew2.html">桃園社區大學</a>
+  
+        <!-- Toggler/collapsibe Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="tycucourse2dirdays.html">星期查詢</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tycucourse2dirplaces.html">學習中心查詢</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">教師查詢</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div id="app">
+       
+      <div class="jumbotron text-white" style="background-color: rgb(122, 201, 204);background-image: url(https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1309&q=80);;height: 100vh;">
+        <h4 class="m-3 p-5 text-center" style="color: rgb(35, 60, 61);font-weight:bold;" >週課表查詢</h4>
+        <select name="" id="byday" class="form-control" v-model="byday" style="color: rgb(2, 116, 116);">
+          <option value="" style="color: rgb(2, 116, 116);">找出最佳學習時間點</option>
+          <option value="星期一">星期一</option>
+          <option value="星期二">星期二</option>
+          <option value="星期三">星期三</option>
+          <option value="星期四">星期四</option>
+          <option value="星期五">星期五</option>
+          <option value="星期六">星期六</option>
+          <option value="星期日">星期日</option>
+        </select>
+
+        <h2 class="m-3 p-3 text-center" style="font-weight:bold;">做時間的主人</h2>
+        <h5 class="m-3 p-3">自己的時間 * 自己安排</h5>
+        <h4 class="m-3 p-3">您準備好了?</h4>
+        <p class="text-center" style="color: rgb(35, 60, 61);font-weight: bold;">  9/14日邀您一起來學習</p>
+        <h2 class="animated flash infinite text-center" > <i class="fa fa-angle-down" aria-hidden="true"></i> </h2>
+
+      </div>
+        
+      <div class="container" style="background-color: rgb(51, 84, 85);">
+         <h3 class="text-center p-2"> {{byday}} </h3>
+         <hr style="background-color: white;">
+          <div id="am">
+            <br>
+              <h4 v-show="byday">早上</h4>
+              <div class="card border mb-2" v-for="coursea,index in dirday1a" style="background-color: rgb(255, 255, 255);width: 300px;margin: auto;">
+                <div class="card-header bg-info text-white text-center">
+                  {{index+1}} - {{coursea.課程編號}}
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title text-center text-primary">{{coursea.課程名稱}} </h4>
+                  <h5 class="card-title text-center text-primary"> {{coursea.教師姓名}}</h5>
+                  <div> <small>{{coursea.開課日期}} ( {{coursea.星期}} ) {{coursea.期間}}  </small> </div>
+                  <div class="text-right">  <small>每週 {{coursea.學分}} 小時 *18 週  </small> <small class="text-danger"> 共 ${{coursea.課程價格}}</small> </div>
+                  
+                  <!-- Button to Open the Modal -->
+                  <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">報名</a>
+                  <button class="btn btn-primary card-link" data-toggle="modal" :data-target="'#'+coursea.id">內容介紹</button>
+                  <!-- The Modal -->
+                  <div class="modal fade" :id="coursea.id">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header bg-primary text-center">
+                          <h6 class="modal-title  text-white">{{coursea.課程編號}} - {{coursea.課程名稱}}</h6> 
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <h5 class="text-danger">
+                            材料費 - {{coursea.材料費}}
+                          </h5>
+
+                          <hr class="bg-danger">
+
+                          <h6>第1週課程-{{coursea.第1週課程}}</h6>
+                          <hr>
+          
+                          <h6>第2週課程 - {{coursea.第2週課程}} </h6>
+                          <hr>
+                                            
+                          <h6>第3週課程 - {{coursea.第3週課程}} </h6>
+                          <hr>
+                          <h6>第4週課程 -  {{coursea.第4週課程}} </h6>
+                          <hr>
+                          <h6>第5週課程 -  {{coursea.第5週課程}}  </h6>
+                          <hr>
+                          <h6>第6週課程 - {{coursea.第6週課程}} </h6>
+                          <hr>
+                          <h6>第7週課程 - {{coursea.第7週課程}} </h6>
+                          <hr>
+                          <h6>第8週課程 -  {{coursea.第8週課程}} </h6>
+                          <hr>
+                          <h6>第9週課程 - {{coursea.第9週課程}} </h6>
+                          <hr>
+                          <h6>第10週課程 -  {{coursea.第10週課程}} </h6>
+                          <hr>
+                          <h6>第11週課程 -  {{coursea.第11週課程}} </h6>
+                          <hr>
+                          <h6>第12週課程 - {{coursea.第12週課程}} </h6>
+                         <hr>
+                          <h6>第13週課程 - {{coursea.第13週課程}}  </h6>
+                          <hr>
+                          <h6>第14週課程 - {{coursea.第14週課程}} </h6>
+                          <hr>
+                          <h6>第15週課程 - {{coursea.第15週課程}} </h6>
+                          <hr>
+                          <h6>第16週課程 - {{coursea.第16週課程}} </h6>
+                          <hr>
+                          <h6>第17週課程 - {{coursea.第17週課程}} </h6>
+                          <hr>
+                          <h6>第18週課程 - {{coursea.第18週課程}} </h6>
+                         
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                
+                <div class="card-footer text-center">
+                  <small>上課地點：{{coursea.上課地點}}</small>
+                </div>
+              </div>
+          </div>
+        
+         <div id="pm">
+          <h4 v-show="byday" >下午</h4>
+          <br>
+          <div class="card border mb-2" v-for="coursea,index in dirday1b" style="background-color: rgb(255, 255, 255);width: 300px;margin: auto;">
+            <div class="card-header bg-danger text-white text-center">
+              {{index+1}} - {{coursea.課程編號}}
+            </div>
+            <div class="card-body">
+              <h4 class="card-title text-center text-primary">{{coursea.課程名稱}} </h4>
+              <h5 class="card-title text-center text-primary"> {{coursea.教師姓名}}</h5>
+              <div> <small>{{coursea.開課日期}} ( {{coursea.星期}} ) 上課時間： {{coursea.上課時間}}  </small> </div>
+              <div class="text-right">  <small>每週 {{coursea.學分}} 小時 *18 週  </small> <small class="text-danger"> 共 ${{coursea.課程價格}}</small> </div>
+              
+              <!-- Button to Open the Modal -->
+              <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">報名</a>
+              <button class="btn btn-primary card-link" data-toggle="modal" :data-target="'#'+coursea.id">內容介紹</button>
+              <!-- The Modal -->
+              <div class="modal fade" :id="coursea.id">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header bg-primary text-center">
+                      <h6 class="modal-title  text-white">{{coursea.課程編號}} - {{coursea.課程名稱}}</h6> 
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h5 class="text-danger">
+                        材料費 - {{coursea.材料費}}
+                      </h5>
+
+                      <hr class="bg-danger">
+
+                      <h6>第1週課程-{{coursea.第1週課程}}</h6>
+                      <hr>
+      
+                      <h6>第2週課程 - {{coursea.第2週課程}} </h6>
+                      <hr>
+                                        
+                      <h6>第3週課程 - {{coursea.第3週課程}} </h6>
+                      <hr>
+                      <h6>第4週課程 -  {{coursea.第4週課程}} </h6>
+                      <hr>
+                      <h6>第5週課程 -  {{coursea.第5週課程}}  </h6>
+                      <hr>
+                      <h6>第6週課程 - {{coursea.第6週課程}} </h6>
+                      <hr>
+                      <h6>第7週課程 - {{coursea.第7週課程}} </h6>
+                      <hr>
+                      <h6>第8週課程 -  {{coursea.第8週課程}} </h6>
+                      <hr>
+                      <h6>第9週課程 - {{coursea.第9週課程}} </h6>
+                      <hr>
+                      <h6>第10週課程 -  {{coursea.第10週課程}} </h6>
+                      <hr>
+                      <h6>第11週課程 -  {{coursea.第11週課程}} </h6>
+                      <hr>
+                      <h6>第12週課程 - {{coursea.第12週課程}} </h6>
+                     <hr>
+                      <h6>第13週課程 - {{coursea.第13週課程}}  </h6>
+                      <hr>
+                      <h6>第14週課程 - {{coursea.第14週課程}} </h6>
+                      <hr>
+                      <h6>第15週課程 - {{coursea.第15週課程}} </h6>
+                      <hr>
+                      <h6>第16週課程 - {{coursea.第16週課程}} </h6>
+                      <hr>
+                      <h6>第17週課程 - {{coursea.第17週課程}} </h6>
+                      <hr>
+                      <h6>第18週課程 - {{coursea.第18週課程}} </h6>
+                     
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            
+            
+
+
+            <div class="card-footer text-center">
+              <small>上課地點：{{coursea.上課地點}}</small>
+            </div>
+          </div>
+
+         </div>
+
+         <div id="night">
+          <h4 v-show="byday" >晚上</h4>
+          <br>
+          <div class="card border mb-2" v-for="coursea,index in dirday1c" style="background-color: rgb(255, 255, 255);width: 300px;margin: auto;">
+            <div class="card-header bg-dark text-white text-center">
+              {{index+1}} - {{coursea.課程編號}}
+            </div>
+            <div class="card-body">
+              <h4 class="card-title text-center text-primary">{{coursea.課程名稱}} </h4>
+              <h5 class="card-title text-center text-primary"> {{coursea.教師姓名}}</h5>
+              <div> <small>{{coursea.開課日期}} ( {{coursea.星期}} ) 上課時間： {{coursea.上課時間}}  </small> </div>
+              <div class="text-right">  <small>每週 {{coursea.學分}} 小時 *18 週  </small> <small class="text-danger"> 共 ${{coursea.課程價格}}</small> </div>
+
+                <!-- Button to Open the Modal -->
+                <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">報名</a>
+                <button class="btn btn-primary card-link" data-toggle="modal" :data-target="'#'+coursea.id">內容介紹</button>
+                <!-- The Modal -->
+                <div class="modal fade" :id="coursea.id">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header bg-primary text-center">
+                        <h6 class="modal-title  text-white">{{coursea.課程編號}} - {{coursea.課程名稱}}</h6> 
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <h5 class="text-danger">
+                          材料費 - {{coursea.材料費}}
+                        </h5>
+
+                        <hr class="bg-danger">
+
+                        <h6>第1週課程-{{coursea.第1週課程}}</h6>
+                        <hr>
+        
+                        <h6>第2週課程 - {{coursea.第2週課程}} </h6>
+                        <hr>
+                                          
+                        <h6>第3週課程 - {{coursea.第3週課程}} </h6>
+                        <hr>
+                        <h6>第4週課程 -  {{coursea.第4週課程}} </h6>
+                        <hr>
+                        <h6>第5週課程 -  {{coursea.第5週課程}}  </h6>
+                        <hr>
+                        <h6>第6週課程 - {{coursea.第6週課程}} </h6>
+                        <hr>
+                        <h6>第7週課程 - {{coursea.第7週課程}} </h6>
+                        <hr>
+                        <h6>第8週課程 -  {{coursea.第8週課程}} </h6>
+                        <hr>
+                        <h6>第9週課程 - {{coursea.第9週課程}} </h6>
+                        <hr>
+                        <h6>第10週課程 -  {{coursea.第10週課程}} </h6>
+                        <hr>
+                        <h6>第11週課程 -  {{coursea.第11週課程}} </h6>
+                        <hr>
+                        <h6>第12週課程 - {{coursea.第12週課程}} </h6>
+                       <hr>
+                        <h6>第13週課程 - {{coursea.第13週課程}}  </h6>
+                        <hr>
+                        <h6>第14週課程 - {{coursea.第14週課程}} </h6>
+                        <hr>
+                        <h6>第15週課程 - {{coursea.第15週課程}} </h6>
+                        <hr>
+                        <h6>第16週課程 - {{coursea.第16週課程}} </h6>
+                        <hr>
+                        <h6>第17週課程 - {{coursea.第17週課程}} </h6>
+                        <hr>
+                        <h6>第18週課程 - {{coursea.第18週課程}} </h6>
+                       
+                      </div>
+
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+            </div>
+            
+            <div class="card-footer text-center">
+              <small>上課地點：{{coursea.上課地點}}</small>
+            </div>
+          </div>
+ 
+         </div>
+         
+      </div>
+
+      
+
+</div>
+    
+    <div class="btn-group fixed-bottom mt-5">
+      <a href="#app" class="btn px-3 text-white" style="background-color: black;">重新查詢</a>
+      <a href="#am" class="btn px-3 text-white" style="background-color: cadetblue; opacity: .5;">早上</a>
+      <a href="#pm" class="btn px-3 text-white" style="background-color: cadetblue;opacity: .5;">下午</a>
+      <a href="#night" class="btn  px-3 text-white" style="background-color: cadetblue;opacity: .5;">晚上</a>
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"
+  ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="tycucourse2new.js"></script>
+</body>
+</html>
