@@ -45,16 +45,16 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="tycucourse2dircourses.html">課程搜尋</a>
+              <a class="nav-link text-warning" href="tycucourse2dircourses.html">找課程</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tycucourse2dirdays.html">星期查詢</a>
+              <a class="nav-link text-warning" href="tycucourse2dirteacher.html">找老師</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tycucourse2dirplaces.html">學習中心查詢</a>
+              <a class="nav-link text-warning" href="tycucourse2dirdays.html">找時間</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">教師查詢</a>
+              <a class="nav-link text-warning" href="tycucourse2dirplaces.html">找上課點</a>
             </li>
           </ul>
         </div>
@@ -63,7 +63,7 @@
     <div id="app">
        
       <div class="jumbotron text-white" style="background-color: rgb(122, 201, 204);background-image: url(https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1309&q=80);;height: 100vh;">
-        <h4 class="m-3 p-5 text-center" style="color: rgb(35, 60, 61);font-weight:bold;" >週課表查詢</h4>
+        <h4 class="p-5 text-center" style="margin-top: 150px;;color: rgb(35, 60, 61);font-weight:bold;" >週課表查詢</h4>
         <select name="" id="byday" class="form-control" v-model="byday" style="color: rgb(2, 116, 116);">
           <option value="" style="color: rgb(2, 116, 116);">找出最佳學習時間點</option>
           <option value="星期一">星期一</option>
@@ -95,9 +95,7 @@
                 </div>
                 <div class="card-body">
                   <h4 class="card-title text-center text-primary">{{coursea.課程名稱}} </h4>
-                  <h5 class="card-title text-center text-primary"> {{coursea.教師姓名}}</h5>
-                  <div> <small>{{coursea.開課日期}} ( {{coursea.星期}} ) {{coursea.期間}}  </small> </div>
-                  <div class="text-right">  <small>每週 {{coursea.學分}} 小時 *18 週  </small> <small class="text-danger"> 共 ${{coursea.課程價格}}</small> </div>
+                  <p class="text-right text-primary"><small > {{coursea.教師姓名}}</small></p>
                   
                   <!-- Button to Open the Modal -->
                   <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">報名</a>
@@ -115,49 +113,93 @@
 
                         <!-- Modal body -->
                         <div class="modal-body">
-                          <h5 class="text-danger">
-                            材料費 - {{coursea.材料費}}
-                          </h5>
+                          <h4 class="text-center">{{coursea.上課點}} </h4>
+                            <p class="text-right"> <small>{{coursea.上課地點}}</small> </p>
+                            <h5 class="text-danger">{{coursea.開課日期}} 起 </h5>
+                            <p><small class="text-center text-danger">每週 ({{coursea.星期}}) {{coursea.期間}} 共十八週</small></p>
+                            <hr>
+                            <p class="text-danger">
+                              材料費 <br>
+                              {{coursea.材料費}}
+                            </p>
 
                           <hr class="bg-danger">
 
-                          <h6>第1週課程-{{coursea.第1週課程}}</h6>
-                          <hr>
-          
-                          <h6>第2週課程 - {{coursea.第2週課程}} </h6>
-                          <hr>
-                                            
-                          <h6>第3週課程 - {{coursea.第3週課程}} </h6>
-                          <hr>
-                          <h6>第4週課程 -  {{coursea.第4週課程}} </h6>
-                          <hr>
-                          <h6>第5週課程 -  {{coursea.第5週課程}}  </h6>
-                          <hr>
-                          <h6>第6週課程 - {{coursea.第6週課程}} </h6>
-                          <hr>
-                          <h6>第7週課程 - {{coursea.第7週課程}} </h6>
-                          <hr>
-                          <h6>第8週課程 -  {{coursea.第8週課程}} </h6>
-                          <hr>
-                          <h6>第9週課程 - {{coursea.第9週課程}} </h6>
-                          <hr>
-                          <h6>第10週課程 -  {{coursea.第10週課程}} </h6>
-                          <hr>
-                          <h6>第11週課程 -  {{coursea.第11週課程}} </h6>
-                          <hr>
-                          <h6>第12週課程 - {{coursea.第12週課程}} </h6>
-                         <hr>
-                          <h6>第13週課程 - {{coursea.第13週課程}}  </h6>
-                          <hr>
-                          <h6>第14週課程 - {{coursea.第14週課程}} </h6>
-                          <hr>
-                          <h6>第15週課程 - {{coursea.第15週課程}} </h6>
-                          <hr>
-                          <h6>第16週課程 - {{coursea.第16週課程}} </h6>
-                          <hr>
-                          <h6>第17週課程 - {{coursea.第17週課程}} </h6>
-                          <hr>
-                          <h6>第18週課程 - {{coursea.第18週課程}} </h6>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <span class="text-primary">第1週課程</span>
+                              <br> {{coursea.第1週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第2週課程</span>
+                              <br> {{coursea.第2週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第3週課程</span>
+                              <br> {{coursea.第3週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第4週課程</span>
+                              <br> {{coursea.第4週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第5週課程</span>
+                              <br> {{coursea.第5週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第6週課程</span>
+                              <br> {{coursea.第6週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第7週課程</span>
+                              <br> {{coursea.第7週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第8週課程</span>
+                              <br> {{coursea.第8週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第9週課程</span>
+                              <br> {{coursea.第9週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第10週課程</span>
+                              <br> {{coursea.第10週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第11週課程</span>
+                              <br> {{coursea.第11週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第12週課程</span>
+                              <br> {{coursea.第12週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第13週課程</span>
+                              <br> {{coursea.第13週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第14週課程</span>
+                              <br> {{coursea.第14週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第15週課程</span>
+                              <br> {{coursea.第15週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第16週課程</span>
+                              <br> {{coursea.第16週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第17週課程</span>
+                              <br> {{coursea.第17週課程}}
+                            </li>
+                            <li class="list-group-item">
+                              <span class="text-primary">第18週課程</span>
+                              <br> {{coursea.第18週課程}}
+                            </li>
+                           
+                          </ul>
                          
                         </div>
 
@@ -188,9 +230,8 @@
             </div>
             <div class="card-body">
               <h4 class="card-title text-center text-primary">{{coursea.課程名稱}} </h4>
-              <h5 class="card-title text-center text-primary"> {{coursea.教師姓名}}</h5>
-              <div> <small>{{coursea.開課日期}} ( {{coursea.星期}} ) 上課時間： {{coursea.上課時間}}  </small> </div>
-              <div class="text-right">  <small>每週 {{coursea.學分}} 小時 *18 週  </small> <small class="text-danger"> 共 ${{coursea.課程價格}}</small> </div>
+              <p class="text-right text-primary"><small > {{coursea.教師姓名}}</small></p>
+
               
               <!-- Button to Open the Modal -->
               <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">報名</a>
@@ -208,49 +249,93 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                      <h5 class="text-danger">
-                        材料費 - {{coursea.材料費}}
-                      </h5>
+                      <h4 class="text-center">{{coursea.上課點}} </h4>
+                      <p class="text-right"> <small>{{coursea.上課地點}}</small> </p>
+                      <h5 class="text-danger">{{coursea.開課日期}} 起 </h5>
+                      <p><small class="text-center text-danger">每週 ({{coursea.星期}}) {{coursea.期間}} 共十八週</small></p>
+                      <hr>
+                      <p class="text-danger">
+                        材料費 <br>
+                        {{coursea.材料費}}
+                      </p>
 
                       <hr class="bg-danger">
 
-                      <h6>第1週課程-{{coursea.第1週課程}}</h6>
-                      <hr>
-      
-                      <h6>第2週課程 - {{coursea.第2週課程}} </h6>
-                      <hr>
-                                        
-                      <h6>第3週課程 - {{coursea.第3週課程}} </h6>
-                      <hr>
-                      <h6>第4週課程 -  {{coursea.第4週課程}} </h6>
-                      <hr>
-                      <h6>第5週課程 -  {{coursea.第5週課程}}  </h6>
-                      <hr>
-                      <h6>第6週課程 - {{coursea.第6週課程}} </h6>
-                      <hr>
-                      <h6>第7週課程 - {{coursea.第7週課程}} </h6>
-                      <hr>
-                      <h6>第8週課程 -  {{coursea.第8週課程}} </h6>
-                      <hr>
-                      <h6>第9週課程 - {{coursea.第9週課程}} </h6>
-                      <hr>
-                      <h6>第10週課程 -  {{coursea.第10週課程}} </h6>
-                      <hr>
-                      <h6>第11週課程 -  {{coursea.第11週課程}} </h6>
-                      <hr>
-                      <h6>第12週課程 - {{coursea.第12週課程}} </h6>
-                     <hr>
-                      <h6>第13週課程 - {{coursea.第13週課程}}  </h6>
-                      <hr>
-                      <h6>第14週課程 - {{coursea.第14週課程}} </h6>
-                      <hr>
-                      <h6>第15週課程 - {{coursea.第15週課程}} </h6>
-                      <hr>
-                      <h6>第16週課程 - {{coursea.第16週課程}} </h6>
-                      <hr>
-                      <h6>第17週課程 - {{coursea.第17週課程}} </h6>
-                      <hr>
-                      <h6>第18週課程 - {{coursea.第18週課程}} </h6>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <span class="text-primary">第1週課程</span>
+                          <br> {{coursea.第1週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第2週課程</span>
+                          <br> {{coursea.第2週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第3週課程</span>
+                          <br> {{coursea.第3週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第4週課程</span>
+                          <br> {{coursea.第4週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第5週課程</span>
+                          <br> {{coursea.第5週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第6週課程</span>
+                          <br> {{coursea.第6週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第7週課程</span>
+                          <br> {{coursea.第7週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第8週課程</span>
+                          <br> {{coursea.第8週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第9週課程</span>
+                          <br> {{coursea.第9週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第10週課程</span>
+                          <br> {{coursea.第10週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第11週課程</span>
+                          <br> {{coursea.第11週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第12週課程</span>
+                          <br> {{coursea.第12週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第13週課程</span>
+                          <br> {{coursea.第13週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第14週課程</span>
+                          <br> {{coursea.第14週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第15週課程</span>
+                          <br> {{coursea.第15週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第16週課程</span>
+                          <br> {{coursea.第16週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第17週課程</span>
+                          <br> {{coursea.第17週課程}}
+                        </li>
+                        <li class="list-group-item">
+                          <span class="text-primary">第18週課程</span>
+                          <br> {{coursea.第18週課程}}
+                        </li>
+                       
+                      </ul>
                      
                     </div>
 
@@ -285,9 +370,8 @@
             </div>
             <div class="card-body">
               <h4 class="card-title text-center text-primary">{{coursea.課程名稱}} </h4>
-              <h5 class="card-title text-center text-primary"> {{coursea.教師姓名}}</h5>
-              <div> <small>{{coursea.開課日期}} ( {{coursea.星期}} ) 上課時間： {{coursea.上課時間}}  </small> </div>
-              <div class="text-right">  <small>每週 {{coursea.學分}} 小時 *18 週  </small> <small class="text-danger"> 共 ${{coursea.課程價格}}</small> </div>
+              <p class="text-right text-primary"><small > {{coursea.教師姓名}}</small></p>
+
 
                 <!-- Button to Open the Modal -->
                 <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">報名</a>
@@ -305,49 +389,93 @@
 
                       <!-- Modal body -->
                       <div class="modal-body">
-                        <h5 class="text-danger">
-                          材料費 - {{coursea.材料費}}
-                        </h5>
+                        <h4 class="text-center">{{coursea.上課點}} </h4>
+                            <p class="text-right"> <small>{{coursea.上課地點}}</small> </p>
+                            <h5 class="text-danger">{{coursea.開課日期}} 起 </h5>
+                            <p><small class="text-center text-danger">每週 ({{coursea.星期}}) {{coursea.期間}} 共十八週</small></p>
+                            <hr>
+                            <p class="text-danger">
+                              材料費 <br>
+                              {{coursea.材料費}}
+                            </p>
 
                         <hr class="bg-danger">
 
-                        <h6>第1週課程-{{coursea.第1週課程}}</h6>
-                        <hr>
-        
-                        <h6>第2週課程 - {{coursea.第2週課程}} </h6>
-                        <hr>
-                                          
-                        <h6>第3週課程 - {{coursea.第3週課程}} </h6>
-                        <hr>
-                        <h6>第4週課程 -  {{coursea.第4週課程}} </h6>
-                        <hr>
-                        <h6>第5週課程 -  {{coursea.第5週課程}}  </h6>
-                        <hr>
-                        <h6>第6週課程 - {{coursea.第6週課程}} </h6>
-                        <hr>
-                        <h6>第7週課程 - {{coursea.第7週課程}} </h6>
-                        <hr>
-                        <h6>第8週課程 -  {{coursea.第8週課程}} </h6>
-                        <hr>
-                        <h6>第9週課程 - {{coursea.第9週課程}} </h6>
-                        <hr>
-                        <h6>第10週課程 -  {{coursea.第10週課程}} </h6>
-                        <hr>
-                        <h6>第11週課程 -  {{coursea.第11週課程}} </h6>
-                        <hr>
-                        <h6>第12週課程 - {{coursea.第12週課程}} </h6>
-                       <hr>
-                        <h6>第13週課程 - {{coursea.第13週課程}}  </h6>
-                        <hr>
-                        <h6>第14週課程 - {{coursea.第14週課程}} </h6>
-                        <hr>
-                        <h6>第15週課程 - {{coursea.第15週課程}} </h6>
-                        <hr>
-                        <h6>第16週課程 - {{coursea.第16週課程}} </h6>
-                        <hr>
-                        <h6>第17週課程 - {{coursea.第17週課程}} </h6>
-                        <hr>
-                        <h6>第18週課程 - {{coursea.第18週課程}} </h6>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            <span class="text-primary">第1週課程</span>
+                            <br> {{coursea.第1週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第2週課程</span>
+                            <br> {{coursea.第2週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第3週課程</span>
+                            <br> {{coursea.第3週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第4週課程</span>
+                            <br> {{coursea.第4週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第5週課程</span>
+                            <br> {{coursea.第5週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第6週課程</span>
+                            <br> {{coursea.第6週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第7週課程</span>
+                            <br> {{coursea.第7週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第8週課程</span>
+                            <br> {{coursea.第8週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第9週課程</span>
+                            <br> {{coursea.第9週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第10週課程</span>
+                            <br> {{coursea.第10週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第11週課程</span>
+                            <br> {{coursea.第11週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第12週課程</span>
+                            <br> {{coursea.第12週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第13週課程</span>
+                            <br> {{coursea.第13週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第14週課程</span>
+                            <br> {{coursea.第14週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第15週課程</span>
+                            <br> {{coursea.第15週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第16週課程</span>
+                            <br> {{coursea.第16週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第17週課程</span>
+                            <br> {{coursea.第17週課程}}
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary">第18週課程</span>
+                            <br> {{coursea.第18週課程}}
+                          </li>
+                         
+                        </ul>
                        
                       </div>
 
