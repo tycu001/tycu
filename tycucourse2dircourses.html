@@ -45,7 +45,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="tycucourse2dircourses.html">課程搜尋</a>
+              <a class="nav-link" href="tycucourse2dirdays.html">課程搜尋</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="tycucourse2dirdays.html">星期查詢</a>
@@ -62,13 +62,13 @@
 
     <div id="app">
        
-      <div class="jumbotron text-white" style="background-color: rgb(122, 201, 204);background-image: url(https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);background-size: cover;;height: 100vh;">
-        <h3 class="m-3 p-5 text-center" style="color: rgb(141, 217, 219);font-weight:bold;" >我的老師我自己找</h3>
+      <div class="jumbotron text-white" style="background-color: rgb(122, 201, 204);background-image: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=841&q=80;height: 100vh;">
+        <h3 class="m-3 p-5 text-center" style="color: rgb(141, 217, 219);font-weight:bold;" >課程名稱搜尋</h3>
         
-        <input type="text" class="form-control" placeholder="先找出最適合自己的老師" v-model="byteahcer">
+        <input type="text" class="form-control" placeholder="搜尋課程名稱" v-model="bycourse">
 
-        <h2 class="m-3 p-3 text-center" style="font-weight:bold;">找到最喜愛的老師!!</h2>
-        <h5 class="m-3 p-3">跟著老師學習，準沒錯!!</h5>
+        <h2 class="m-3 p-3 text-center" style="font-weight:bold;">輕鬆找出您適合的課程!!</h2>
+        <h5 class="m-3 p-3">聰明查詢，就對了!!</h5>
         <h4 class="m-3 p-3">您準備好了?</h4>
         <p class="text-center" style="color: rgb(255, 254, 170);font-weight: bold;">  9/14日邀請您一起共同來學習</p>
         <h2 class="animated flash infinite text-center" > <i class="fa fa-angle-down" aria-hidden="true"></i> </h2>
@@ -82,7 +82,7 @@
           <div >
             <br>
              
-              <div class="card border mb-2" v-for="coursea,index in dircoursebyteacher" style="background-color: rgb(255, 255, 255);width: 300px;margin: auto;">
+              <div class="card border mb-2" v-for="coursea,index in dircoursebysearch" style="background-color: rgb(255, 255, 255);width: 300px;margin: auto;">
                 <div class="card-header bg-info text-white text-center">
                   {{index+1}} - {{coursea.課程編號}}
                 </div>
