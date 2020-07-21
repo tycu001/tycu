@@ -79,13 +79,14 @@
       <section id="tycu01" class="container">
         <h4 class="p-2 text-center">Explore eveything</h4>
         <h5>秋季推薦課程</h5>
+        <br>
         <div
           id="suggest"
           class="container p-0"
           style="width: 320px; background-color: #fff; margin: auto;"
         >
           <div class="course d-flex" v-for="recommend in recommends">    
-            <img :src="recommend.src" style="width: 200px;">
+            <img :src="recommend.src" style="width: 200px;height: 120px;">
             <div class="txt p-2">
               <a href="#" data-toggle="modal" :data-target="'#'+recommend.id"> <h6> {{recommend.課程編號}} <br> {{recommend.課程名稱}} </h6>  </a>                         
               <small>  {{recommend.教師姓名}} 老師 </small>
@@ -209,16 +210,19 @@
           </div>     
       </section>
 
+      <hr>
+
       <section id="tycu02" class="container">
-        <h4 class="p-2 text-center">Know friends</h4>
+        <h4 class="p-2 text-center">Make friends</h4>
         <h5>秋季新課程</h5>
+        <br>
         <div
           id="new"
           class="container p-0"
           style="width: 320px; background-color: #fff; margin: auto;"
         >
           <div class="course d-flex" v-for="newcourse in newcourses">    
-            <img :src="newcourse.src" style="width: 200px;">
+            <img :src="newcourse.src" style="width: 200px;height: 120px;">
             <div class="txt p-2">
               <a href="#" data-toggle="modal" :data-target="'#'+newcourse.id"> <h6> {{newcourse.課程編號}} <br> {{newcourse.課程名稱}} </h6>  </a>                         
               <small>  {{newcourse.教師姓名}} 老師 </small>
