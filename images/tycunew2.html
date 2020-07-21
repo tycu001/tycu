@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>桃園社大最新課程</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgba(240, 238, 238, 1);
+      }
+
+      .name {
+        color: rgba(175, 175, 175, 0.884);
+      }
+
+      .price {
+        color: red;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md  navbar-dark fixed-top">
+      <!-- Brand -->
+      <a class="navbar-brand" href="tycunew2.html">桃園社區大學</a>
+
+      <!-- Toggler/collapsibe Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="tycucourse2dircourses.html">找課程</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="tycucourse2dirteacher.html">找老師</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="tycucourse2dirdays.html">找時間</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="tycucourse2dirplaces.html">找上課點</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron text-center text-white bg-dark">
+      <h2 class="mt-5">9/14 星期一陸續開課</h2>
+      <h6 style="margin-top:200px">發掘新事物 * 結交新朋友 = 桃園在地好生活</h6>
+      <h2 class="animated flash infinite"> <a href="#app" class="text-white"><i class="fa fa-angle-down" aria-hidden="true"></i></a> </h2>
+    </div>
+
+    <div id="app">
+      <section id="tycu01" class="container">
+        <h4 class="p-2 text-center">Explore eveything</h4>
+        <h5>秋季推薦課程</h5>
+        <br>
+        <div
+          id="suggest"
+          class="container p-0"
+          style="width: 320px; background-color: #fff; margin: auto;"
+        >
+          <div class="course d-flex" v-for="recommend in myrecommend">    
+            <img :src="recommend.src" style="width: 200px;height: 120px;">
+            <div class="txt p-2">
+              <a href="#" data-toggle="modal" :data-target="'#'+recommend.id"> <h6> {{recommend.課程編號}} <br> {{recommend.課程名稱}} </h6>  </a>                         
+              <small>  {{recommend.教師姓名}} 老師 </small>
+            </div>
+            
+       
+            <!-- The Modal -->
+            <div class="modal" :id="recommend.id">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header bg-primary text-white">
+                    <h6 class="modal-title">{{recommend.課程名稱}}({{recommend.課程編號}})</h6>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <p>{{recommend.課程介紹}}</p>
+                    <h4 class="text-center">{{recommend.上課點}} </h4>
+                    <p class="text-right"> <small>{{recommend.上課地點}}</small> </p>
+                    <h5 class="text-danger">{{recommend.開課日期}} 起 </h5>
+                    <p><small class="text-center text-danger">每週 ({{recommend.星期}}) {{recommend.期間}} 共十八週</small></p>
+                    <hr>
+                    <h6 class="text-danger">新生課程費用  {{100+200+180+Number(recommend.優惠價格)}} / 舊生課程費用  {{200+180+Number(recommend.優惠價格)}} </h6>
+                    <hr>
+                    <p >
+                      新生上課證製作費 NT 100 （舊生減免）  +
+                    </p>
+                    <p >
+                      報名費 (每學期繳一次) NT 200  +
+                    </p>
+              
+                    <p>
+                      學分費 NT {{recommend.優惠價格}} + 
+                    </p>
+
+                    <p >
+                      保險費 (每學期繳一次) NT 180
+                    </p>
+                    
+                    <hr>
+                    <p class="text-danger">
+                      雜費 (視場地提供)
+                    </p>
+                    <hr>
+                    <p>
+                      冷氣費 200-300 / 上機費 500 
+                    </p>
+                    <hr>
+                    <p class="text-danger">
+                      材料費 (教師上課時收取)
+                    </p>
+                    <hr>
+                    <p>
+                      {{recommend.材料費}}
+                    </p>
+
+                    <hr class="bg-danger">
+                     
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <span class="text-primary">第1週課程</span>
+                        <br> {{recommend.第1週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第2週課程</span>
+                        <br> {{recommend.第2週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第3週課程</span>
+                        <br> {{recommend.第3週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第4週課程</span>
+                        <br> {{recommend.第4週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第5週課程</span>
+                        <br> {{recommend.第5週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第6週課程</span>
+                        <br> {{recommend.第6週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第7週課程</span>
+                        <br> {{recommend.第7週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第8週課程</span>
+                        <br> {{recommend.第8週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第9週課程</span>
+                        <br> {{recommend.第9週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第10週課程</span>
+                        <br> {{recommend.第10週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第11週課程</span>
+                        <br> {{recommend.第11週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第12週課程</span>
+                        <br> {{recommend.第12週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第13週課程</span>
+                        <br> {{recommend.第13週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第14週課程</span>
+                        <br> {{recommend.第14週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第15週課程</span>
+                        <br> {{recommend.第15週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第16週課程</span>
+                        <br> {{recommend.第16週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第17週課程</span>
+                        <br> {{recommend.第17週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第18週課程</span>
+                        <br> {{recommend.第18週課程}}
+                      </li>
+                     
+                    </ul>
+
+                    
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">退出</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>     
+      </section>
+
+      <hr>
+
+      <section id="tycu02" class="container">
+        <h4 class="p-2 text-center">Make friends</h4>
+        <h5>秋季新課程</h5>
+        <br>
+        <div
+          id="new"
+          class="container p-0"
+          style="width: 320px; background-color: #fff; margin: auto;"
+        >
+          <div class="course d-flex" v-for="newcourse in mynewcourse">    
+            <img :src="newcourse.src" style="width: 200px;height: 120px;">
+            <div class="txt p-2">
+              <a href="#" data-toggle="modal" :data-target="'#'+newcourse.id"> <h6> {{newcourse.課程編號}} <br> {{newcourse.課程名稱}} </h6>  </a>                         
+              <small>  {{newcourse.教師姓名}} 老師 </small>
+            </div>
+            
+       
+            <!-- The Modal -->
+            <div class="modal" :id="newcourse.id">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title">{{newcourse.課程編號}}-{{newcourse.課程名稱}}</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <p>{{newcourse.課程介紹}}</p>
+                    <h4 class="text-center">{{newcourse.上課點}} </h4>
+                    <p class="text-right"> <small>{{newcourse.上課地點}}</small> </p>
+                    <h5 class="text-danger">{{newcourse.開課日期}} 起 </h5>
+                    <p><small class="text-center text-danger">每週 ({{newcourse.星期}}) {{newcourse.期間}} 共十八週</small></p>
+                    <hr>
+                    <p class="text-danger">
+                      材料費 <br>
+                       {{newcourse.材料費}}
+                    </p>
+
+                    <hr class="bg-danger">
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <span class="text-primary">第1週課程</span>
+                        <br> {{newcourse.第1週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第2週課程</span>
+                        <br> {{newcourse.第2週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第3週課程</span>
+                        <br> {{newcourse.第3週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第4週課程</span>
+                        <br> {{newcourse.第4週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第5週課程</span>
+                        <br> {{newcourse.第5週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第6週課程</span>
+                        <br> {{newcourse.第6週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第7週課程</span>
+                        <br> {{newcourse.第7週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第8週課程</span>
+                        <br> {{newcourse.第8週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第9週課程</span>
+                        <br> {{newcourse.第9週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第10週課程</span>
+                        <br> {{newcourse.第10週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第11週課程</span>
+                        <br> {{newcourse.第11週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第12週課程</span>
+                        <br> {{newcourse.第12週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第13週課程</span>
+                        <br> {{newcourse.第13週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第14週課程</span>
+                        <br> {{newcourse.第14週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第15週課程</span>
+                        <br> {{newcourse.第15週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第16週課程</span>
+                        <br> {{newcourse.第16週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第17週課程</span>
+                        <br> {{newcourse.第17週課程}}
+                      </li>
+                      <li class="list-group-item">
+                        <span class="text-primary">第18週課程</span>
+                        <br> {{newcourse.第18週課程}}
+                      </li>
+                     
+                    </ul>
+                    
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">退出</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>     
+      </section>
+
+      <h6 class="my-5 text-right container"><a href="tycucourse2dirdays.html">更多課程.....</a></h6>
+      <br>
+    </div>  
+
+    <footer>
+      <div class="btn-group fixed-bottom mt-5">
+        <a href="https://line.me/ti/p/xRgqEXObOm" class="btn btn-success">Line好友</a>
+        <a href="tel:03-3318897" class="btn btn-primary">客服電話</a>
+        <a href="mailto:tycu003@gmail.com" class="btn btn-primary">客服信箱</a>
+        <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">線上報名</a>
+      </div>
+    </footer>
+   
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="tycucourse2newmain.js"></script>
+  </body>
+</html>
