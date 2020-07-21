@@ -85,7 +85,7 @@
           class="container p-0"
           style="width: 320px; background-color: #fff; margin: auto;"
         >
-          <div class="course d-flex" v-for="recommend in recommends">    
+          <div class="course d-flex" v-for="recommend in myrecommend">    
             <img :src="recommend.src" style="width: 200px;height: 120px;">
             <div class="txt p-2">
               <a href="#" data-toggle="modal" :data-target="'#'+recommend.id"> <h6> {{recommend.課程編號}} <br> {{recommend.課程名稱}} </h6>  </a>                         
@@ -100,12 +100,13 @@
 
                   <!-- Modal Header -->
                   <div class="modal-header bg-primary text-white">
-                    <h4 class="modal-title">{{recommend.課程名稱}}({{recommend.課程編號}})</h4>
+                    <h6 class="modal-title">{{recommend.課程名稱}}({{recommend.課程編號}})</h6>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
 
                   <!-- Modal body -->
                   <div class="modal-body">
+                    <p>{{recommend.課程介紹}}</p>
                     <h4 class="text-center">{{recommend.上課點}} </h4>
                     <p class="text-right"> <small>{{recommend.上課地點}}</small> </p>
                     <h5 class="text-danger">{{recommend.開課日期}} 起 </h5>
@@ -221,7 +222,7 @@
           class="container p-0"
           style="width: 320px; background-color: #fff; margin: auto;"
         >
-          <div class="course d-flex" v-for="newcourse in newcourses">    
+          <div class="course d-flex" v-for="newcourse in mynewcourse">    
             <img :src="newcourse.src" style="width: 200px;height: 120px;">
             <div class="txt p-2">
               <a href="#" data-toggle="modal" :data-target="'#'+newcourse.id"> <h6> {{newcourse.課程編號}} <br> {{newcourse.課程名稱}} </h6>  </a>                         
@@ -242,6 +243,7 @@
 
                   <!-- Modal body -->
                   <div class="modal-body">
+                    <p>{{newcourse.課程介紹}}</p>
                     <h4 class="text-center">{{newcourse.上課點}} </h4>
                     <p class="text-right"> <small>{{newcourse.上課地點}}</small> </p>
                     <h5 class="text-danger">{{newcourse.開課日期}} 起 </h5>
@@ -349,14 +351,15 @@
       <br>
     </div>  
 
-
-    <div class="btn-group fixed-bottom mt-5">
-      <a href="https://line.me/ti/p/xRgqEXObOm" class="btn btn-success">Line好友</a>
-      <a href="tel:03-3318897" class="btn btn-primary">客服電話</a>
-      <a href="mailto:tycu003@gmail.com" class="btn btn-primary">客服信箱</a>
-      <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">線上報名</a>
-    </div>
-
+    <footer>
+      <div class="btn-group fixed-bottom mt-5">
+        <a href="https://line.me/ti/p/xRgqEXObOm" class="btn btn-success">Line好友</a>
+        <a href="tel:03-3318897" class="btn btn-primary">客服電話</a>
+        <a href="mailto:tycu003@gmail.com" class="btn btn-primary">客服信箱</a>
+        <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">線上報名</a>
+      </div>
+    </footer>
+   
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
