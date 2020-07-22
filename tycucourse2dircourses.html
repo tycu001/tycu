@@ -89,13 +89,13 @@
              
               <div id="showcourse" class="card border mb-5" v-for="coursea,index in dircoursebysearch" style="background-color: rgb(255, 255, 255);width: 300px;margin: auto;">
                 <div class="card-header bg-info text-white text-center">
-                  {{coursea.課程編號}}
+                  {{coursea.課程編號}} 
                 </div>
                 <div class="card-body">
                   <h4 class="card-title text-center text-primary"> <a href="#" class="card-link" data-toggle="modal" :data-target="'#'+coursea.id" >{{coursea.課程名稱}}</a> </h4>
                   <p class="card-title text-right"> <small>{{coursea.教師姓名}} 老師</small> </p>
                   <p class="text-right"><small>{{coursea.上課星期}}{{coursea.上課時段}}{{coursea.期間}}</small></p>
-                  <p class="text-center mb-1"> {{index+1}} / {{dircoursebysearch.length}} </p>
+                 
                   <!-- Button to Open the Modal -->
                   <!-- The Modal -->
                   <div class="modal fade" :id="coursea.id">
@@ -142,13 +142,11 @@
                           <p>
                             冷氣費 200-300 / 上機費 300 
                           </p>
+                     
                           <hr>
                           <p class="text-danger">
                             材料費 (教師上課時收取)
-                          </p>
-                          <hr>
-                          <p class="text-danger">
-                            材料費 <br>
+                            <hr>
                              {{coursea.材料費}}
                           </p>
 
@@ -246,6 +244,8 @@
                 
                 <div class="card-footer text-center">
                   <small> {{coursea.地點}} / ({{coursea.上課地點}})</small>
+                  <p class="text-center mb-1"> <small>{{index+1}} / {{dircoursebysearch.length}}</small> </p>
+
                 </div>
               </div>
           </div>
