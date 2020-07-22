@@ -6910,7 +6910,7 @@ let data = {
                 "id": "C4032",
                 "type":"recommend",
                 "課程編號": "1092C4032",
-                "src":"https://i.ytimg.com/vi/32si5cfrCNc/maxresdefault.jpg",
+                "src":"images/c4032.jpg",
                 "課程名稱": "華佗五禽戲氣功與太極拳",
                 "學習中心": "後站學習中心",
                 "地點": "雲林里集會所",
