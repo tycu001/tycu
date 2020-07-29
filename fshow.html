@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃園社大期末成果展</title>
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+
+    
+</head>
+<body>
+
+        <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="images/fshow01.gif" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/fshow02.gif" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/fshow03.gif" alt="">
+            </div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev text-white"></div>
+        <div class="swiper-button-next text-white"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <div class="container mt-5">
+        <ol>
+            <li>
+                請於8月20日 17:00前填寫完畢
+            </li>
+            <li>
+                8月22日星期六 9:15-12:00講師班代會議將舉行節目順序抽籤,當天未到場之表演班級,由社大代為抽籤
+            </li>
+            <li>
+                講師僅需出席一場期末成果展或開學典禮,出席簽到列為10901第18周課程鐘點費調查依據
+            </li>
+            <li>
+                每班節目為5分鐘，為掌控現場活動時間，請準時配合舞台彩排流程，若延遲將視狀況取消彩排
+            </li>
+        </ol>
+    </div>
+
+    <footer>
+        <div class="btn-group fixed-bottom">
+            <a href="https://forms.gle/WTxPiiJPEdDu6xsi8" class="btn btn-primary">節目調查</a>
+            <a href="https://forms.gle/VWEoygD1wTWFPCvr6" class="btn btn-primary">攤位調查</a>
+        </div>
+    </footer>
+
+
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        // direction: 'vertical',
+        loop: true,
+        autoplay: {
+         delay: 5000,
+        },
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        })
+    </script>
+    
+</body>
+</html>
