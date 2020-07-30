@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1091班級團報繳費查詢</title>
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <style>
+        * {
+            list-style: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h5>
+            早鳥優惠開始了!!
+        </h5>
+        <h6>
+            8/1-8/15 : 9折
+        </h6>
+        <h6>
+            8/16-8/31 : 95折
+        </h6>
+    </div>
+
+    <div id="app">
+        <div class="container text-center mb-5" v-for="bill in checkteacher">
+            <div>
+                <div v-if="bill.繳費狀態=='y'" class="text-primary">已團報繳費</div> <div v-if="bill.繳費狀態=='n'" class="text-danger">尚未繳費</div>
+                <small class="text-primary"> 繳費日期： {{bill.繳費日期}} / 繳費總額： NT {{bill.繳費金額}} </small>
+            </div>
+            <div>
+                本期編號 {{bill.課程編號}} {{bill.課程名稱}}
+            </div>
+            <div>
+                下期編號 {{bill.下期課程編號}} 
+            </div>
+            <div class="text-right">
+                <small class="text-danger">{{bill.教師姓名}} 老師</small>
+            </div>
+            <div>
+                {{bill.上課時間}}
+            </div>
+            <div>
+                {{bill.學習中心}} - {{bill.授課地點}}
+            </div>
+            <hr>
+        </div>
+       
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+            <form class="form-inline">
+              <input class="form-control" type="text" placeholder="輸入老師姓名" v-model.trim="dirteacher">
+            </form>
+          </nav>
+        
+    </div>
+
+        <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+        <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="1091groupbill.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: data,
+            computed: {
+                checkteacher(){
+                    if(this.dirteacher){
+                        return this.bills.filter(item=>{
+                            return item.教師姓名.indexOf(this.dirteacher) !=-1
+                        })
+                    }else {
+                        return this.bills
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
