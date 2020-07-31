@@ -11,6 +11,11 @@
         * {
             list-style: none;
         }
+
+        #mycourse:nth-child(odd) {
+            background-color: rgb(242, 243, 180);
+            background-image: linear-gradient( 115deg,red,transparent) 50% 50%;
+        }
     </style>
 
 </head>
@@ -28,15 +33,15 @@
     </div>
 
     <div id="app">
-        <div class="container text-center mb-5" v-for="bill in checkteacher">
+        <div id="mycourse" class="container text-center mb-5" v-for="bill in checkteacher">
             <div>
                 <div v-if="bill.繳費狀態=='y'" class="text-primary">已團報繳費</div> <div v-if="bill.繳費狀態=='n'" class="text-danger">尚未繳費</div>
-                <small class="text-primary"> 繳費日期： {{bill.繳費日期}} / 繳費總額： NT {{bill.繳費金額}} </small>
+                <small class="text-primary" v-show="bill.繳費狀態=='y'"> 繳費日期： {{bill.繳費日期}} / 繳費總額： NT {{bill.繳費金額}} </small>
             </div>
             <div>
                 本期編號 {{bill.課程編號}} {{bill.課程名稱}}
             </div>
-            <div>
+            <div v-show="bill.繳費狀態=='y'">
                 下期編號 {{bill.下期課程編號}} 
             </div>
             <div class="text-right">
