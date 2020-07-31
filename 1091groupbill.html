@@ -16,28 +16,34 @@
             background-color: rgb(242, 243, 180);
             background-image: linear-gradient( 115deg,red,transparent) 50% 50%;
         }
+
+        #mycourse:nth-child(even) {
+            color: white;
+            background-color: rgb(255, 178, 34);
+            background-image: linear-gradient( 115deg,red,transparent) 50% 50%;
+        }
     </style>
 
 </head>
 <body>
     <div class="jumbotron text-center">
-        <h5>
+        <h5 class="text-danger">
             早鳥優惠開始了!!
         </h5>
-        <h6>
+        <h6 class="text-warning"> 
             8/1-8/15 : 9折
         </h6>
-        <h6>
+        <h6 class="text-warning">
             8/16-8/31 : 95折
         </h6>
+        <p>
+            請記得與桃大行動客服確認金額無誤後再進行匯款哦!! <br> 匯款時請備註原班級編號
+        </p>
     </div>
 
     <div id="app">
-        <div id="mycourse" class="container text-center mb-5" v-for="bill in checkteacher">
-            <div>
-                <div v-if="bill.繳費狀態=='y'" class="text-primary">已團報繳費</div> <div v-if="bill.繳費狀態=='n'" class="text-danger">尚未繳費</div>
-                <small class="text-primary" v-show="bill.繳費狀態=='y'"> 繳費日期： {{bill.繳費日期}} / 繳費總額： NT {{bill.繳費金額}} </small>
-            </div>
+        <div id="mycourse" class="container text-center py-3" v-for="bill in checkteacher">
+           
             <div>
                 本期編號 {{bill.課程編號}} {{bill.課程名稱}}
             </div>
@@ -53,12 +59,15 @@
             <div>
                 {{bill.學習中心}} - {{bill.授課地點}}
             </div>
-            <hr>
+            <div>
+                <div v-if="bill.繳費狀態=='y'" class="text-primary">已團報繳費</div> <div v-if="bill.繳費狀態=='n'" class="text-danger">尚未繳費</div>
+                <small class="text-primary" v-show="bill.繳費狀態=='y'"> 繳費日期： {{bill.繳費日期}} / 繳費總額： NT {{bill.繳費金額}} </small>
+            </div>
         </div>
        
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
             <form class="form-inline">
-              <input class="form-control" type="text" placeholder="輸入老師姓名" v-model.trim="dirteacher">
+              <input class="form-control" type="text" placeholder="查詢老師姓名" v-model.trim="dirteacher">
             </form>
           </nav>
         
