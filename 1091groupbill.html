@@ -26,7 +26,9 @@
 
 </head>
 <body>
-    <div class="jumbotron text-center">
+
+   
+    <div class="jumbotron text-center mt-5">
         <h5 class="text-danger">
             早鳥優惠開始了!!
         </h5>
@@ -42,10 +44,10 @@
     </div>
 
     <div id="app">
-        <div id="mycourse" class="container text-center py-3" v-for="bill in checkteacher">
+        <div id="mycourse" class="container text-center py-3" v-for="(bill,index) in checkteacher">
            
             <div>
-                本期編號 {{bill.課程編號}} {{bill.課程名稱}}
+                {{index+1}} {{bill.課程名稱}} ({{bill.課程編號}} )
             </div>
             <div v-show="bill.繳費狀態=='y'">
                 下期編號 {{bill.下期課程編號}} 
@@ -64,12 +66,13 @@
                 <small class="text-primary" v-show="bill.繳費狀態=='y'"> 繳費日期： {{bill.繳費日期}} / 繳費總額： NT {{bill.繳費金額}} </small>
             </div>
         </div>
-       
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="#">桃園社大</a>
             <form class="form-inline">
               <input class="form-control" type="text" placeholder="查詢老師姓名" v-model.trim="dirteacher">
             </form>
-          </nav>
+        </nav>
+       
         
     </div>
 
