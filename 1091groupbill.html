@@ -29,6 +29,10 @@
 
    
     <div class="jumbotron text-center mt-5">
+        
+        <p id="today" class="text-right"></p>
+        <p>
+        <p id="rest"></p>
         <h5 class="text-danger">
             早鳥優惠開始了!!
         </h5>
@@ -38,12 +42,12 @@
         <h6 class="text-warning">
             8/16-8/31 : 95折
         </h6>
-        <p>
             請記得與桃大行動客服確認金額無誤後再進行匯款哦!! <br> 匯款時請備註原班級編號
         </p>
     </div>
 
     <div id="app">
+        
         <div id="mycourse" class="container text-center py-3" v-for="(bill,index) in checkteacher">
            
             <div>
@@ -68,7 +72,7 @@
         </div>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <form class="form-inline">
-              <input class="form-control" type="text" placeholder="查詢老師姓名" v-model.trim="dirteacher">
+              <input class="form-control" type="date"  v-model.trim="dirdate">
             </form>
         </nav>
        
@@ -91,19 +95,35 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    <script>
+       
+        var y = moment().format('YYYY');
+        var m = moment().format('MM')-1;
+        var d = moment().format('DD');
+        var a = moment([y,m,d])
+        var b = moment([2020, 08-1, 15]);
+        document.querySelector("#rest").innerHTML =  "九折優惠 " + a.to(b)
+    </script>
 
         <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="1091groupbill.js"></script>
+    <script>
+            var d = new Date()
+            var week = ["日","一","二","三","四","五","六"]
+            var today = d.getMonth()+1 + "月" + d.getDate() + "日" + " 星期" + week[d.getDay()]
+            document.querySelector("#today").innerHTML = "今日 " +  today
+    </script>
     <script>
         new Vue({
             el: "#app",
             data: data,
             computed: {
                 checkteacher(){
-                    if(this.dirteacher){
+                    if(this.dirdate){
                         return this.bills.filter(item=>{
-                            return item.教師姓名.indexOf(this.dirteacher) !=-1
+                            return item.繳費日期 == this.dirdate
                         })
                     }else {
                         return this.bills
