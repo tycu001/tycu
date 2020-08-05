@@ -20,20 +20,15 @@
    
     <div class="jumbotron text-center mt-5">
         
-        <p id="today" class="text-right"></p>
+        <p id="today" class="text-right" style="font-size: xx-small;"></p>
         <p>
         <p id="rest"></p>
         <h5 class="text-danger">
             早鳥優惠開始了!!
         </h5>
         <h6 class="text-warning"> 
-            8/1-8/15 : 9折
+            8/1-8/15 : 9折 / 8/16-8/31 : 95折
         </h6>
-        <h6 class="text-warning">
-            8/16-8/31 : 95折
-        </h6>
-            請記得與桃大行動客服確認金額無誤後再進行匯款哦!! <br> 匯款時請備註原班級編號
-        </p>
     </div>
 
     <div id="app">
@@ -50,10 +45,10 @@
                 <small class="text-danger">{{bill.教師姓名}} 老師</small>
             </div>
             <div>
-                {{bill.上課時間}}
+                <small>{{bill.上課時間}} / {{bill.學習中心}} - {{bill.授課地點}}</small>
             </div>
             <div>
-                {{bill.學習中心}} - {{bill.授課地點}}
+                
             </div>
             <div>
                 <div v-if="bill.繳費狀態=='y'" class="text-primary">已團報繳費</div> <div v-if="bill.繳費狀態=='n'" class="text-danger">尚未繳費</div>
