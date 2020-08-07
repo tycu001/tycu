@@ -1623,7 +1623,7 @@ let data = {
             "繳費狀態": "n"
         }
     ],
-    dirdate
+    dirdate: ""
 }
    
    
