@@ -56,9 +56,8 @@
             </div>
         </div>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-            <form class="form">
-              <input class="form-control" type="date" placeholder="日期查詢" v-model.trim="dirdate">
-             
+            <form class="form-inline">
+              <input type="text" class="form-control" placeholder="輸入教師姓名" v-model.trim="dirteacher">
             </form>
         </nav>
        
@@ -107,9 +106,9 @@
             data: data,
             computed: {
                 checkteacher(){
-                    if(this.dirdate){
+                    if(this.dirteacher){
                         return this.bills.filter(item=>{
-                            return item.繳費日期 == this.dirdate
+                            return item.教師姓名.indexOf(this.dirteacher) !=-1
                         })
                     }else {
                         return this.bills
