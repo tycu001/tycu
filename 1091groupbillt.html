@@ -32,7 +32,10 @@
     </div>
 
     <div id="app">
-        
+        <h6 class="text-center pr-5 text-danger">
+            團報收入為新台幣 {{total}}
+         </h6>
+         <hr>
         <div id="mycourse" class="text-center mb-5 py-3 border border-warning border-top-0 border-right-0 border-left-0" v-for="(bill,index) in checkteacher">
            
             <div>
@@ -50,14 +53,14 @@
             <div>
                 
             </div>
-            <div>
+            <div class="pb-4">
                 <div v-if="bill.繳費狀態=='y'" class="text-primary">已團報繳費</div> <div v-if="bill.繳費狀態=='n'" class="text-danger">尚未繳費</div>
                 <small class="text-primary" v-show="bill.繳費狀態=='y'"> 繳費日期： {{bill.繳費日期}} / 繳費總額： NT {{bill.繳費金額}} </small>
             </div>
         </div>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <form class="form-inline">
-              <input type="text" class="form-control" placeholder="輸入教師姓名" v-model.trim="dirteacher">
+              <input type="text" class="form-control" placeholder="請輸入教師姓名" v-model.trim="dirteacher">
             </form>
         </nav>
        
@@ -103,7 +106,10 @@
     <script>
         new Vue({
             el: "#app",
-            data: data,
+            data: {
+                bills: bills,
+                dirteacher: ""
+            },
             computed: {
                 checkteacher(){
                     if(this.dirteacher){
@@ -113,9 +119,27 @@
                     }else {
                         return this.bills
                     }
+                },
+                total(){
+                    var sum = 0
+                    if(this.dirteacher){
+                        for(var i in this.checkteacher){
+                            sum += parseInt(this.checkteacher[i].繳費金額)
+                        }
+                        return sum
+                    }else {
+                        for(var i in this.bills){
+                            if(this.bills[i].繳費金額){
+                                sum += parseInt(this.bills[i].繳費金額)
+                            }
+                        }
+                        return sum
+                    }
                 }
             }
         })
     </script>
+
+    
 </body>
 </html>
