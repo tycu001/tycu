@@ -37,21 +37,25 @@
     </style>
   </head>
   <body>
-
-    <ul class="nav fixed-top" style="background-color: black;">
-      <li class="nav-item">
-        <a href="tycucourse2dircourses.html" class="nav-link text-white">找課程</a>
-      </li>
-      <li class="nav-item">
-        <a href="tycucourse2dirteacher.html" class="nav-link text-white">找老師</a>
-      </li>
-      <li class="nav-item">
-        <a href="tycucourse2dirdays.html" class="nav-link text-white">找時間</a>
-      </li>
-      <li class="nav-item">
-        <a href="tycucourse2dirplaces.html" class="nav-link text-white">找上課點</a>
-      </li>
-    </ul>
+    <nav id="menu">
+      <ul class="nav fixed-top" style="background-color: black;">
+        <li class="nav-item">
+          <a href="tycunew2.html" class="nav-link text-white">介紹</a>
+        </li>
+        <li class="nav-item">
+          <a href="tycucourse2dircourses.html" class="nav-link text-white">課程</a>
+        </li>
+        <li class="nav-item">
+          <a href="tycucourse2dirteacher.html" class="nav-link text-white">老師</a>
+        </li>
+        <li class="nav-item">
+          <a href="tycucourse2dirdays.html" class="nav-link text-white">時間</a>
+        </li>
+        <li class="nav-item">
+          <a href="tycucourse2dirplaces.html" class="nav-link text-white">上課點</a>
+        </li>
+      </ul>
+    </nav>
 
     
 
@@ -428,6 +432,45 @@
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="coursedetail.js"></script>
-    <script src="tycucourse2newmain.js"></script>
+    <script>
+          new Vue({
+            el: "#tycu01",
+            data: {
+                    courses: courses,
+            },
+            computed: {
+              myrecommend(){
+                  return this.courses.filter(item=>{
+                      return item.type == "recommend"
+                  })
+              },
+
+              dircoursebyplaces(){
+                return this.courses.filter((item)=>{
+                  return item.上課點 == this.bycenters
+                })
+              },
+              dircoursebysearch(){
+                  return this.courses.filter((item)=>{
+                      return item.課程名稱 == this.bycourses
+                    })
+              }
+              }   
+          });
+
+          new Vue({
+              el:"#tycu02",
+              data: {
+                  courses: courses,
+              },
+              computed: {
+                  mynewcourse(){
+                      return this.courses.filter(item=>{
+                          return item.type == "newcourse"
+                      })
+                  }
+              }
+          })
+    </script>
   </body>
 </html>
