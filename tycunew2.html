@@ -34,11 +34,16 @@
         color: red;
         text-align: right;
       }
+      .jumbotron {
+        background-image: url('https://images.unsplash.com/photo-1463852123206-49976aaeab67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+        background-size: cover;
+      }
     </style>
   </head>
   <body>
-    <nav id="menu">
-      <ul class="nav fixed-top" style="background-color: black;">
+  
+
+      <ul class="nav fixed-bottom" style="background-color: black;">
         <li class="nav-item">
           <a href="tycunew2.html" class="nav-link text-white">介紹</a>
         </li>
@@ -55,12 +60,12 @@
           <a href="tycucourse2dirplaces.html" class="nav-link text-white">上課點</a>
         </li>
       </ul>
-    </nav>
 
     
 
     <div class="jumbotron text-center text-white bg-dark">
-      <h2 class="mt-5">9/14 星期一陸續開課</h2>
+      <h4>桃城藝術人文 / 都市智慧綠活 </h4>
+      <h2 class="mt-5" id="msg">9/14 星期一陸續開課</h2>
       <h6 style="margin-top:10px">發掘新事物 * 結交新朋友 = 桃園在地好生活</h6>
       <h2 class="animated flash infinite"> <a href="#app" class="text-white"><i class="fa fa-angle-down" aria-hidden="true"></i></a> </h2>
     </div>
@@ -405,14 +410,7 @@
       <br>
     </div>  
 
-    <footer>
-      <div class="btn-group fixed-bottom mt-5">
-        <a href="https://line.me/ti/p/xRgqEXObOm" class="btn btn-success">Line好友</a>
-        <a href="tel:03-3318897" class="btn btn-primary">客服電話</a>
-        <a href="mailto:tycu003@gmail.com" class="btn btn-primary">客服信箱</a>
-        <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">線上報名</a>
-      </div>
-    </footer>
+   
    
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -429,6 +427,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="coursedetail.js"></script>
