@@ -28,7 +28,7 @@
 </head>
 <body>
   <nav id="menu">
-    <ul class="nav fixed-top" style="background-color: black;">
+    <ul class="nav fixed-bottom" style="background-color: black;opacity: 0.7;">
       <li class="nav-item">
         <a href="tycunew2.html" class="nav-link text-white">介紹</a>
       </li>
@@ -75,7 +75,7 @@
          <hr style="background-color: white;">
           <div id="byday">
             <br>
-              <div class="card border mb-2" v-for="coursea,index in dircoursebyday" style="background-color: rgb(255, 255, 255);width: 300px;margin: auto;">
+              <div class="card border mb-5" v-for="coursea,index in dircoursebyday" style="background-color: rgb(255, 255, 255);width: 300px;margin: auto;">
                 <div class="card-header bg-info text-white text-center">
                   {{index+1}} - {{coursea.課程編號}}
                 </div>
