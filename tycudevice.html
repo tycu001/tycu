@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>桃大設備</title>
+    <style>
+        .jubotron {
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="jubotron bg-success mb-5">
+        <h1 class="text-white p-5 text-center">2020 桃大設備</h1>
+        <button  class="btn btn-danger m-3" onclick="check()">行政人員確認</a>
+    </div>
+    <footer>
+        <div class="group">
+            <a href="https://forms.gle/RtGSBCKFnknSR3ej7" class="btn btn-outline-primary">借用</a>
+            <a href="https://docs.google.com/spreadsheets/d/1WdR4mN-qeOosF_-1AuzCs3lX0DtdseaS525pmsGXx7A/edit?usp=sharing" class="btn btn-outline-primary">查詢</a>
+        </div>
+    </footer>
+    <script>
+        function check(){
+            var pwd = "3193344"
+            var input = prompt('請輸入你的暱稱');
+            if(input == pwd) {
+                window.location.href= 'https://docs.google.com/spreadsheets/d/1WdR4mN-qeOosF_-1AuzCs3lX0DtdseaS525pmsGXx7A/edit?usp=sharing'
+
+            }
+        }
+    </script>
+    
+</body>
+</html>
