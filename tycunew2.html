@@ -34,11 +34,18 @@
         color: red;
         text-align: right;
       }
+      .jumbotron {
+        height: 80vh;
+        background-image: linear-gradient(-180deg,transparent,rgb(6, 6, 99)),url('https://images.unsplash.com/photo-1463852123206-49976aaeab67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+        background-size: cover;
+        background-position: center center;
+      }
     </style>
   </head>
   <body>
-    <nav id="menu">
-      <ul class="nav fixed-top" style="background-color: black;">
+  
+
+      <ul class="nav fixed-bottom" style="background-color: black;opacity: 0.7;">
         <li class="nav-item">
           <a href="tycunew2.html" class="nav-link text-white">介紹</a>
         </li>
@@ -55,16 +62,50 @@
           <a href="tycucourse2dirplaces.html" class="nav-link text-white">上課點</a>
         </li>
       </ul>
-    </nav>
 
     
 
-    <div class="jumbotron text-center text-white bg-dark">
-      <h2 class="mt-5">9/14 星期一陸續開課</h2>
-      <h6 style="margin-top:10px">發掘新事物 * 結交新朋友 = 桃園在地好生活</h6>
+    <div class="jumbotron text-center text-white bg-dark mb-0">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      
+      
+      <div class="container mt-5">
+        <h5 class="mt-5">桃城藝術人文 / 都市智慧綠活 </h5>
+        <h6 style="margin-top:10px">2020 桃大在地特色 * 永續發展</h6>
+        <p>一起共同來認識你我的桃城，發展智慧綠活生活</p>
+        <h3 class="mt-5" id="msg">9/14 星期一陸續開課中 ...</h3>
+      
       <h2 class="animated flash infinite"> <a href="#app" class="text-white"><i class="fa fa-angle-down" aria-hidden="true"></i></a> </h2>
+      </div>
+      
     </div>
 
+    <ul class="nav sticky-top mt-0" style="background-color: rgb(4, 51, 121);">
+      <li class="nav-item bg-success">
+        <a href="https://line.me/ti/p/xRgqEXObOm" class="btn text-white">Line好友</a>
+      </li>
+      <li class="nav-item text-center">
+        <a href="tel:03-3318897" class="btn text-white ">客服電話</a>
+      </li>
+      <li class="nav-item text-center">
+        <a href="mailto:tycu003@gmail.com" class="btn text-white">客服信箱</a>
+      </li>
+      <li class="nav-item text-center">
+        <a href="https://ty.twcc.org.tw/course/" class="btn text-white">線上報名</a>
+      </li>
+    
+    </ul>
+
+  
+
+  
     <div id="app">
       <section id="tycu01" class="container">
         <h4 class="p-2 text-center">Explore eveything</h4>
@@ -101,7 +142,7 @@
                     <p class="text-right"> <small>{{recommend.上課地點}}</small> </p>
                     <p>{{recommend.課程介紹}}</p>
                     <h5 class="text-danger">{{recommend.開課日期}} 起 </h5>
-                    <p><small class="text-center text-danger">每週 ({{recommend.星期}}) {{recommend.期間}} 共十八週</small></p>
+                    <p><small class="text-center text-danger">每週 ({{recommend.上課星期}}) {{recommend.期間}} 共十八週</small></p>
                     <hr>
                     <h6 class="text-danger">新生課程費用  {{100+200+180+Number(recommend.優惠價格)}} / 舊生課程費用  {{200+180+Number(recommend.優惠價格)}} </h6>
                     <hr>
@@ -269,7 +310,7 @@
                     <p class="text-right"> <small>{{newcourse.上課地點}}</small> </p>
                     <p>{{newcourse.課程介紹}}</p>
                     <h5 class="text-danger">{{newcourse.開課日期}} 起 </h5>
-                    <p><small class="text-center text-danger">每週 ({{newcourse.星期}}) {{newcourse.期間}} 共十八週</small></p>
+                    <p><small class="text-center text-danger">每週 ({{newcourse.上課星期}}) {{newcourse.期間}} 共十八週</small></p>
                     <hr>
                 
                     <h6 class="text-danger">新生課程費用  {{100+200+180+Number(newcourse.優惠價格)}} / 舊生課程費用  {{200+180+Number(newcourse.優惠價格)}} </h6>
@@ -405,14 +446,7 @@
       <br>
     </div>  
 
-    <footer>
-      <div class="btn-group fixed-bottom mt-5">
-        <a href="https://line.me/ti/p/xRgqEXObOm" class="btn btn-success">Line好友</a>
-        <a href="tel:03-3318897" class="btn btn-primary">客服電話</a>
-        <a href="mailto:tycu003@gmail.com" class="btn btn-primary">客服信箱</a>
-        <a href="https://ty.twcc.org.tw/course/" class="btn btn-primary">線上報名</a>
-      </div>
-    </footer>
+   
    
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -429,6 +463,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="tycunew2.js"></script>
