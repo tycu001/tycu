@@ -66,13 +66,15 @@
     
 
     <div class="jumbotron text-center text-white bg-dark mb-0">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <h6 class="text-right">今日是 <span id="today"></span> </h6>
+      <div >
+        <span id="rest" style="font-size: 72px;"></span>天
+        <br>
+        後開學
+      </div>
+      
+
+     
       
       
       
@@ -137,7 +139,7 @@
 
                   <!-- Modal body -->
                   <div class="modal-body">
-                    
+                    <iframe width="100%" height="200" :src="recommend.youtube" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                     <h4 class="text-center">{{recommend.上課點}} </h4>
                     <p class="text-right"> <small>{{recommend.上課地點}}</small> </p>
                     <p>{{recommend.課程介紹}}</p>
@@ -302,10 +304,12 @@
                     <h4 class="modal-title">{{newcourse.課程編號}}-{{newcourse.課程名稱}}</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
-
+                  
                   <!-- Modal body -->
                   <div class="modal-body">
                     
+                    <iframe width="100%" height="200" :src="newcourse.youtube" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                     <h4 class="text-center">{{newcourse.上課點}} </h4>
                     <p class="text-right"> <small>{{newcourse.上課地點}}</small> </p>
                     <p>{{newcourse.課程介紹}}</p>
@@ -467,6 +471,15 @@
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="tycunew2.js"></script>
+    <script>
+      let d = new Date()
+      let d1 = new Date("2020/09/14")
+      let rest = Math.ceil((d1-d) / 1000/60/60/24)
+      $("#rest").text(rest)
+      let week = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]
+      let today = d.getFullYear()-1911 + "年" + (d.getMonth()+1) + "月" + d.getDate() + "日" + week[d.getDay()]
+      $("#today").text(today)
+    </script>
     <script>
           new Vue({
             el: "#tycu01",
