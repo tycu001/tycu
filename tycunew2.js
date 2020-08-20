@@ -1,4 +1,4 @@
-let courses = [
+let courses =  [
         {
             "id": "A2001",
             "課程編號": "1092A2001",
@@ -136,6 +136,7 @@ let courses = [
             "課程編號": "1092C5023",
             "src": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
             "課程名稱": "中外金曲K歌教唱-英日國台",
+            "youtube": "https://www.youtube.com/embed/yL6ONCwwfd8",
             "新課程": "否",
             "type": "newcourse",
             "學習中心": "藝文特區學習中心",
@@ -312,6 +313,7 @@ let courses = [
             "課程編號": "1092C6006",
             "src": "images/c6006.jpg",
             "課程名稱": "珠寶銀飾金工實作",
+            "youtube": "https://www.youtube.com/embed/JLb4LogwXBs",
             "新課程": "否",
             "type": "recommend",
             "學習中心": "藝文特區學習中心",
