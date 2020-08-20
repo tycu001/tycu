@@ -100,7 +100,8 @@
                   {{coursea.課程編號}} 
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title text-center text-primary"> <a href="#" class="card-link" data-toggle="modal" :data-target="'#'+coursea.id" >{{coursea.課程名稱}}</a>   </h4>
+                  <h4 class="card-title text-center text-primary"> <a href="#" class="card-link" data-toggle="modal" :data-target="'#'+coursea.id" >{{coursea.課程名稱}} </a>   </h4>
+                  <div class="text-center"><small class="text-danger"> 繳費人數 {{coursea.人數}} 人</small></div>
                   <p class="card-title text-center mb-0 pb-0"> <small>{{coursea.上課星期}}{{coursea.上課時段}}{{coursea.期間}}</small> </p>
                   <p class="text-right mb-0 pb-0"><small >{{coursea.教師姓名}} 老師</small></p>
                   <!-- Button to Open the Modal -->
