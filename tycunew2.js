@@ -1,4 +1,4 @@
-let courses =  [
+let courses =   [
         {
             "id": "A2001",
             "課程編號": "1092A2001",
@@ -225,6 +225,7 @@ let courses =  [
             "課程編號": "1092C4032",
             "src": "images/c4032.jpg",
             "課程名稱": "華佗五禽戲氣功與太極拳",
+            "youtube": "https://www.youtube.com/embed/q-DlCHlh0v8",
             "新課程": "否",
             "type": "recommend",
             "學習中心": "後站學習中心",
