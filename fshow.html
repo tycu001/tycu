@@ -141,7 +141,20 @@
               </div>
               <div id="collapseTwo" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                  Lorem ipsum..
+                    <div id="local3">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>教師</th>  <th>攤位</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="c in local3">
+                                    <td > {{c.教師姓名}} </td>  <td> {{c.課程編號}} <br> {{c.課程名稱}} </td> 
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>
                 </div>
               </div>
             </div>
@@ -154,7 +167,20 @@
               </div>
               <div id="collapseThree" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                  Lorem ipsum..
+                    <div id="local4">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>教師</th>  <th>攤位</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="d in local4" class="text-primary">
+                                    <td > {{d.教師姓名}} </td>  <td> {{d.課程編號}} <br> {{d.課程名稱}} </td> 
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>
                 </div>
               </div>
             </div>
@@ -167,7 +193,20 @@
                 </div>
                 <div id="collapseFour" class="collapse" data-parent="#accordion">
                   <div class="card-body">
-                    Lorem ipsum..
+                    <div id="local5">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>教師</th>  <th>攤位</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="e in local5" class="text-warning">
+                                    <td > {{e.教師姓名}} </td>  <td> {{e.課程編號}} <br> {{e.課程名稱}} </td> 
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>
                   </div>
                 </div>
             </div>
@@ -179,7 +218,7 @@
     </div>
 
       <div class="container m-5">
-          abc
+          <h6>課務組張組長撰寫製作</h6>
       </div>
 
     <footer>
@@ -257,6 +296,36 @@
             el: "#local2",
             data: {
                 local2: local2
+            }
+        })
+    </script>
+
+    <script src="local3.js"></script>
+    <script>
+        new Vue({
+            el: "#local3",
+            data: {
+                local3: local3
+            }
+        })
+    </script>
+
+    <script src="local4.js"></script>
+    <script>
+        new Vue({
+            el: "#local4",
+            data: {
+                local4: local4
+            }
+        })
+    </script>
+
+    <script src="local5.js"></script>
+    <script>
+        new Vue({
+            el: "#local5",
+            data: {
+                local5: local5
             }
         })
     </script>
