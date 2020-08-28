@@ -56,6 +56,132 @@
         
     </div>
 
+    <div id="app" class="container">
+        <h6>節目單流程表</h6>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>時間</th><th>名稱</th><th>老師</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="show in shows">
+                    <td> {{show.時間}} </td> <td> {{show.名稱}} </td> <td> {{show.老師}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <hr>
+
+
+    <div class="container">
+        <h6>攤位表</h6>
+        <div id="accordion">
+    
+            <div class="card">
+              <div class="card-header bg-danger text-center">
+                <a class="card-link text-white" data-toggle="collapse" href="#collapseOne">
+                    桃城藝術人文
+                </a>
+              </div>
+              <div id="collapseOne" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+
+                    <div id="local">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>教師</th>  <th>攤位</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="b in local" class="text-danger">
+                                    <td > {{b.教師姓名}} </td>  <td> {{b.課程編號}} <br> {{b.課程名稱}} </td> 
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>
+                   
+                </div>
+              </div>
+            </div>
+    
+            <div class="card">
+                <div class="card-header bg-success text-center">
+                  <a class="collapsed card-link text-white" data-toggle="collapse" href="#collapseFive">
+                    都市智慧綠美化
+                  </a>
+                </div>
+                <div id="collapseFive" class="collapse" data-parent="#accordion">
+                  <div class="card-body">
+                    <div id="local2">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>教師</th>  <th>攤位</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="a in local2" class="text-success">
+                                    <td > {{a.教師姓名}} </td>  <td> {{a.課程編號}} <br> {{a.課程名稱}} </td> 
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>
+                  </div>
+                </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header text-center">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                    桃園享美食輕生活
+                </a>
+              </div>
+              <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  Lorem ipsum..
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header bg-primary text-center">
+                <a class="collapsed card-link text-white" data-toggle="collapse" href="#collapseThree">
+                    桃園瘋運動
+                </a>
+              </div>
+              <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  Lorem ipsum..
+                </div>
+              </div>
+            </div>
+    
+            <div class="card">
+                <div class="card-header bg-warning text-center">
+                  <a class="collapsed card-link text-white" data-toggle="collapse" href="#collapseFour">
+                    桃園航空城
+                  </a>
+                </div>
+                <div id="collapseFour" class="collapse" data-parent="#accordion">
+                  <div class="card-body">
+                    Lorem ipsum..
+                  </div>
+                </div>
+            </div>
+    </div>
+   
+
+         
+      
+    </div>
+
+      <div class="container m-5">
+          abc
+      </div>
+
     <footer>
         <div class="btn-group fixed-bottom">
             <a href="https://forms.gle/WTxPiiJPEdDu6xsi8" class="btn btn-primary">節目調查</a>
@@ -102,5 +228,38 @@
         },
         })
     </script>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="showdata.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                shows: shows
+            }
+        })
+    </script>
+    <script src="local.js"></script>
+    <script>
+        new Vue({
+            el: "#local",
+            data: {
+                local: local
+            }
+        })
+    </script>
+
+    <script src="local2.js"></script>
+    <script>
+        new Vue({
+            el: "#local2",
+            data: {
+                local2: local2
+            }
+        })
+    </script>
+   
 </body>
 </html>
