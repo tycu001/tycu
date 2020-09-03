@@ -119,14 +119,14 @@
          <hr style="background-color: white;">
           <div >
             <br>
-            
+            <p class="text-white text-right">人數更新日期2020/09/03</p>
               <div class="card border mb-5" v-for="coursea,index in dircoursebyplaces" style="background-color: rgb(255, 255, 255);width: 300px;margin: auto;">
                 <div class="card-header bg-info text-white text-center">
                   {{index+1}} - {{coursea.課程編號}}
                 </div>
                 <div class="card-body">
                   <h4 class="card-title text-center text-primary"> <a href="#" class="card-link" data-toggle="modal" :data-target="'#'+coursea.id">{{coursea.課程名稱}}</a> </h4>
-                  <div class="text-center"><small class="text-danger"> 繳費人數 {{coursea.人數}} 人</small></div>
+                  <div class="text-center"><small class="text-danger"> 繳費人數 {{coursea.人數}} 人</small>  <small class="text-danger" v-show="coursea.開課" >開課</small>  </div>
                   <p class="card-title text-center mb-0 pb-0"> <small>{{coursea.上課星期}}{{coursea.上課時段}}{{coursea.期間}}</small> </p>
                   <p class="text-right mb-0 pb-0"><small >{{coursea.教師姓名}} 老師</small></p>
                   <!-- Button to Open the Modal -->
