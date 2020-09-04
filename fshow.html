@@ -50,7 +50,7 @@
     <div id="app">
         <h5 class="text-center text-primary">節目單流程表</h5>
         <h6 class="text-center text-primary"> 林泊鋐 老師負責</h6>
-        <table  class="table mx-auto" style="width: 600px;">
+        <table  class="table mx-auto" style="max-width: 960px;">
             <thead class="bg-danger text-white">
                 <tr>
                     <th>時間</th><th>班級節目</th><th>老師</th>
@@ -58,7 +58,7 @@
             </thead>
             <tbody id="myshow">
                 <tr v-for="show in shows">
-                    <td> {{show.時間}} </td> <td style="width: 50%"> {{show.名稱}} </td> <td> {{show.老師}} </td>
+                    <td style="width: 20%"> {{show.時間}} </td> <td style="width: 40%"> {{show.名稱}} </td> <td style="width: 40%"> {{show.老師}} </td>
                 </tr>
             </tbody>
         </table>
@@ -73,7 +73,7 @@
         <p class="p-2 text-center ">
             本期攤位表依以下顏色區分，當天有 A4 立牌，請依顏色辨位
         </p>
-        <div id="accordion" class="mx-auto" style="width: 600px;">
+        <div id="accordion" class="mx-auto" style="max-width: 960px">
     
             <div class="card">
               <div class="card-header bg-danger text-center">
